@@ -90,9 +90,9 @@ const kTextEditorButtons=[
 const kMode="no-cors"; //cors, no-cors, same-origin
 const kCache="default"; //default, no-cache, reload, force-cache, only-if-cached
 const kCredentials="omit"; //include, same-origin, omit
-const kContenttype="application/json"; //application/json, application/x-www-form-urlencoded ...
+const kContenttype="application/x-www-form-urlencoded"; //application/json, application/x-www-form-urlencoded ...
 const kRedirect="follow"; //manual, follow, error
-const kReferrerpolicy="origin"; //no-referrer, no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+const kReferrerpolicy="no-referrer"; //no-referrer, no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
 const kAuthorization="nobody"; //'Authorization': 'Basic xxxxx'
 
 
@@ -119,7 +119,7 @@ if (document.location.search.indexOf('theme=') >= 0) {
     theme = document.location.search.split('theme=')[1].split('&')[0];
 }
 var app = new Framework7({
-    "version": "1.4.3",
+    "version": "1.4.4",
     "id": "com.thorium.theradio.fm",
     "root": "#app",
     "theme": theme,
@@ -138,8 +138,8 @@ var app = new Framework7({
         "tapHoldPreventClicks": false,
         "activeState": true,
         "activeStateElements": "a, button, label, span, .actions-button",
-        "materialRipple": false,
-        "iosTouchRipple": false,
+        "materialRipple": true,
+        "iosTouchRipple": true,
         "materialRippleElements": ".ripple, .link, .item-link, .links-list a, .button, button, .input-clear-button, .dialog-button, .tab-link, .item-radio, .item-checkbox, .actions-button, .searchbar-disable-button, .fab a, .checkbox, .radio, .data-table .sortable-cell, .notification-close-button"
     },
     "clicks": {
