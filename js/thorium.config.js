@@ -119,7 +119,7 @@ if (document.location.search.indexOf('theme=') >= 0) {
     theme = document.location.search.split('theme=')[1].split('&')[0];
 }
 var app = new Framework7({
-    "version": "1.4.4",
+    "version": "1.4.5",
     "id": "com.thorium.theradio.fm",
     "root": "#app",
     "theme": theme,
