@@ -18,8 +18,8 @@ const kWebShareApi =true;
 const kAutoClosePanels =true;
 const kDesktopAllowed =true;
 const kOneSignalAppId="";
-const kTheme='.color-theme-red';
-const kCustomColor=null;
+const kTheme=".color-theme-red";
+const kCustomColor="black";
 const kFillMode=false;
 
 const kPhotoBrowserBackLinkText="close";
@@ -27,12 +27,12 @@ const kPhotoBrowserTheme="dark";
 const kPhotoBrowserEffect="slide";
 const kPhotoBrowserAutoPlay="";
 
-const kForceInstall = true;
+const kForceInstall = false;
 const kAddToHomeScreenIos = true;
 const kAddToHomeScreenMd = true;
 const kSkipButton=true;
 const kSkipButtonText="Skip";
-const kAddToHomeScreenTitle="theradio.fm";
+const kAddToHomeScreenTitle="theradio fm";
 const kAddToHomeScreenMdText="Add to home screen now for lasting free fun!";
 const kAddToHomeScreenIosText="Add to home screen now for lasting free fun!";
 const kImgMaxSize=10;
@@ -90,7 +90,7 @@ const kTextEditorButtons=[
 const kMode="no-cors"; //cors, no-cors, same-origin
 const kCache="default"; //default, no-cache, reload, force-cache, only-if-cached
 const kCredentials="omit"; //include, same-origin, omit
-const kContenttype="application/x-www-form-urlencoded"; //application/json, application/x-www-form-urlencoded ...
+const kContenttype="application/json"; //application/json, application/x-www-form-urlencoded ...
 const kRedirect="follow"; //manual, follow, error
 const kReferrerpolicy="no-referrer"; //no-referrer, no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
 const kAuthorization="nobody"; //'Authorization': 'Basic xxxxx'
@@ -119,14 +119,14 @@ if (document.location.search.indexOf('theme=') >= 0) {
     theme = document.location.search.split('theme=')[1].split('&')[0];
 }
 var app = new Framework7({
-    "version": "1.4.5",
+    "version": "1.5.1",
     "id": "com.thorium.theradio.fm",
     "root": "#app",
     "theme": theme,
     "autoDarkTheme": true,
     "language": "en",
     "routes": routes,
-    "name": "theradio.fm",
+    "name": "theradio fm",
     "initOnDeviceReady": true,
     "init": true,
     "iosTranslucentBars": true,
@@ -137,9 +137,9 @@ var app = new Framework7({
         "tapHoldDelay": 2,
         "tapHoldPreventClicks": false,
         "activeState": true,
-        "activeStateElements": "a, button, label, span, .actions-button",
+        "activeStateElements": "a, button, label, span, div, .actions-button",
         "materialRipple": true,
-        "iosTouchRipple": true,
+        "iosTouchRipple": false,
         "materialRippleElements": ".ripple, .link, .item-link, .links-list a, .button, button, .input-clear-button, .dialog-button, .tab-link, .item-radio, .item-checkbox, .actions-button, .searchbar-disable-button, .fab a, .checkbox, .radio, .data-table .sortable-cell, .notification-close-button"
     },
     "clicks": {
@@ -152,7 +152,7 @@ var app = new Framework7({
         "iosOverlaysWebView": true,
         "iosTextColor": "white",
         "iosBackgroundColor": "black",
-        "materialBackgroundColor": null
+        "materialBackgroundColor": "black"
     },
     "view": {
         "main": true,
