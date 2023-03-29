@@ -119,7 +119,7 @@ if (document.location.search.indexOf('theme=') >= 0) {
     theme = document.location.search.split('theme=')[1].split('&')[0];
 }
 var app = new Framework7({
-    "version": "1.5.1",
+    "version": "1.7.0",
     "id": "com.thorium.theradio.fm",
     "root": "#app",
     "theme": theme,
@@ -137,10 +137,10 @@ var app = new Framework7({
         "tapHoldDelay": 2,
         "tapHoldPreventClicks": false,
         "activeState": true,
-        "activeStateElements": "a, button, label, span, div, .actions-button",
+        "activeStateElements": "image, a, link, button, label, span, div, .actions-button, .gearWrap, .play, .shuffle, .playlist, .currentGroup, .gear, .inline, .cover, .albumgroup, .title, .author, .gearMini, .rotate, .selectable",
         "materialRipple": true,
         "iosTouchRipple": false,
-        "materialRippleElements": ".ripple, .link, .item-link, .links-list a, .button, button, .input-clear-button, .dialog-button, .tab-link, .item-radio, .item-checkbox, .actions-button, .searchbar-disable-button, .fab a, .checkbox, .radio, .data-table .sortable-cell, .notification-close-button"
+        "materialRippleElements": ".ripple, .link, .item-link, .links-list a, .button, button, .input-clear-button, .dialog-button, .tab-link, .item-radio, .item-checkbox, .actions-button, .searchbar-disable-button, .fab a, .checkbox, .radio, .data-table .sortable-cell, .notification-close-button, .gearWrap, .play, .shuffle, .playlist, .currentGroup, .gear, .inline, .cover, .albumgroup, .title, .author, .gearMini, .rotate, .selectable"
     },
     "clicks": {
         "externalLinks": ".external"

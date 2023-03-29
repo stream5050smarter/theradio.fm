@@ -5,13 +5,13 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
- <loc>https://theradio.plus</loc>
- <lastmod>2022-12-26</lastmod>
+ <loc>https://theradio.fm</loc>
+ <lastmod>2023-03-18</lastmod>
  <priority>1.00</priority>
 </url>
 <url>
- <loc>https://theradio.plus/index.html</loc>
- <lastmod>2022-12-26</lastmod>
+ <loc>https://theradio.fm/index.html</loc>
+ <lastmod>2023-03-18</lastmod>
  <priority>0.80</priority>
 </url>
 </urlset>
