@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<html lang="en">
+<head>
+<title>Whereby</title>
+<meta charset="utf-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Whereby Stream">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, height=device-height, viewport-fit=cover, initial-scale=1.0">
 <style>
-html, body, iframe {
-  -webkit-text-size-adjust: 100%;
-  margin:0;
-  padding:0;
-  height:100%;
-  }
-iframe {
-  display:block;
-  width:100%;
-  border:none;
-  }
+  html, body, iframe {
+              margin:0;
+              padding:0;
+              top:0;
+              left:0;
+              bottom:0;
+              right:0;
+              height:100%;
+              z-index:999999;
+              }
+  iframe {
+              overflow:hidden;
+              display:block;
+              width:100%;
+              border:none;
+              }
 </style>
 </head>
 <body>
-<iframe src="https://whereby.com/freetheradio" allow="camera; microphone; fullscreen; speaker; display-capture"></iframe>
+<iframe title="whereby" src="https://whereby.com/freetheradio" allow="camera; microphone; fullscreen; speaker; display-capture"></iframe>
 </body>
 </html>
