@@ -41,7 +41,7 @@
     {"title":"ClassicFM", "author":"South Africa","media":"https://edge.iono.fm/xice/49_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"702", "author":"South Africa","media":"https://25593.live.streamtheworld.com/FM702AAC.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"KFM", "author":"South Africa","media":"https://25593.live.streamtheworld.com/KFMAAC.aac", "type":"audio/aac", "live":true, "liveDuration":3},
-    {"title":"Cape Talk", "author":"South Africa","media":"https://21223.live.streamtheworld.com/CAPETALKAAC.aac", "type":"audio/aac", "live":true, "liveDuration":3},
+    {"title":"Cape Talk", "author":"South Africa","media":"https://21223.live.streamtheworld.com/CAPE_TALKAAC.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"Radio 2000", "author":"South Africa","media":"http://25493.live.streamtheworld.com/RADIO2000AAC.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"JacarandaFM", "author":"South Africa","media":"https://live.jacarandafm.com/jacarandahigh.mp3", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"947", "author":"South Africa","media":"http://25443.live.streamtheworld.com/FM947AAC.aac", "type":"audio/aac", "live":true, "liveDuration":3},
