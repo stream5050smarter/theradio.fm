@@ -38,7 +38,7 @@
   [
     {"title":"Radio Pulpit", "author":"South Africa","media":"https://edge.iono.fm/xice/189_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"Radio Cape Pulpit", "author":"South Africa","media":"https://edge.iono.fm/xice/110_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
-    {"title":"Classic", "author":"South Africa","media":"https://edge.iono.fm/xice/49_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
+    {"title":"ClassicFM", "author":"South Africa","media":"https://edge.iono.fm/xice/49_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"702", "author":"South Africa","media":"https://25593.live.streamtheworld.com/FM702AAC.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"KFM", "author":"South Africa","media":"https://25593.live.streamtheworld.com/KFMAAC.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"Cape Talk", "author":"South Africa","media":"https://21223.live.streamtheworld.com/CAPETALKAAC.aac", "type":"audio/aac", "live":true, "liveDuration":3},
@@ -50,15 +50,15 @@
     {"title":"YFM", "author":"South Africa","media":"https://streaming.fabrik.fm/yfm/echocast/audio/index.m3u8", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"OFM", "author":"South Africa","media":"https://edge.iono.fm/xice/ofm_live_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"Radiowave", "author":"Namibia","media":"https://edge.iono.fm/xice/194_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
-    {"title":"HOTFM", "author":"South Africa","media":"https://edge.iono.fm/xice/57_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},   
+    {"title":"HotFM", "author":"South Africa","media":"https://edge.iono.fm/xice/57_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},   
     {"title":"MixFM","author":"South Africa","media":"https://edge.iono.fm/xice/113_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"Power", "author":"South Africa","media":"https://edge.iono.fm/xice/65_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
-    {"title":"ECR", "author":"South Africa","media":"https://live.ecr.co.za/ecrlow.aac", "type":"audio/aac", "live":true, "liveDuration":3},
+    {"title":"ECR", "author":"South Africa","media":"https://live.ecr.co.za/ecrhigh.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"CliffCentral", "author":"South Africa","media":"https://edge.iono.fm/xice/cliffcentral_live_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"KayaFM", "author":"South Africa","media":"https://live-kaya.sharp-stream.com/kayahigh.mp3", "type":"audio/mpeg", "live":true, "liveDuration":3},
     {"title":"Bosveld Stereo", "author":"South Africa","media":"https://iceant.antfarm.co.za/Bosveld", "live":true, "liveDuration":3},
     {"title":"LekkerFM", "author":"South Africa","media":"https://zas3.ndx.co.za:8002/stream", "live":true, "liveDuration":3},
-    {"title":"KofsiFM", "author":"South Africa","media":"https://edge.iono.fm/xice/87_medium.aac", "type":"audio/aac", "live":true, "liveDuration":3},
+    {"title":"KofsiFM", "author":"South Africa","media":"https://edge.iono.fm/xice/87_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"BMH Radio", "author":"South Africa","media":"https://edge.iono.fm/xice/bmh_live_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"MFM", "author":"South Africa","media":"https://edge.iono.fm/xice/46_high.aac", "type":"audio/aac", "live":true, "liveDuration":3}
   ]
