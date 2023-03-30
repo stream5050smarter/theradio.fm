@@ -7,7 +7,9 @@
       "default",
       {
         "ignore": [
-          "iframe[allow]"
+          "iframe[allow]",
+          "iframe[allowpaymentrequest]",
+          "iframe[loading]"
         ]
       }
     ]
