@@ -77,7 +77,7 @@
 	<div id="tabs-o-1037" class="tabs">
 		<div id="tab-1" class="page-content tab tab-active">	
 			<div id="div-1043" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-				<iframe id="iframe-1048" src="https://gear.pinel.ink" class="embed-responsive-item"></iframe>
+				<iframe id="iframe-1048" src="./pages/brizy.html" class="embed-responsive-item"></iframe>
 			</div>
 		</div>
 		<div id="tab-2" class="page-content tab">
@@ -87,17 +87,17 @@
 		</div>
 		<div id="tab-3" class="page-content tab">
 			<div id="div-1045" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-				<iframe id="iframe-1050" src="https://resignerluthblog.framer.media" class="embed-responsive-item"></iframe>
+				<iframe id="iframe-1050" src="./pages/blog.html" class="embed-responsive-item"></iframe>
 			</div>
 		</div>
 		<div id="tab-4" class="page-content tab">
 			<div id="div-1046" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-				<iframe id="iframe-1051" src="https://social-wall.theradio.workers.dev" class="embed-responsive-item"></iframe>
+				<iframe id="iframe-1051" src="./pages/wall.html" class="embed-responsive-item"></iframe>
 			</div>
 		</div>
 		<div id="tab-5" class="page-content tab">
 			<div id="div-1047" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-				<iframe id="iframe-1052" src="https://link.gallery/theradiofm" class="embed-responsive-item"></iframe>
+				<iframe id="iframe-1052" src="./pages/dash.html" class="embed-responsive-item"></iframe>
 			</div>
 		</div>
 	</div>
