@@ -63,7 +63,7 @@
     {"title":"BMH Radio", "author":"South Africa","media":"https://edge.iono.fm/xice/bmh_live_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"MFM", "author":"South Africa","media":"https://edge.iono.fm/xice/46_high.aac", "type":"audio/aac", "live":true, "liveDuration":3}
   ]
-  
+}
   
   
   
