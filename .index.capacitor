@@ -21,9 +21,7 @@
 
 <body class="theme-dark color-theme-red" >
 	
-
-	
-    <div id="app" class="framework7-root">
+      <div id="app" class="framework7-root">
         
       <div class="panel-backdrop"></div>
   
@@ -97,7 +95,7 @@
           </div>
           <div id="tab-5" class="page-content tab">
               <div id="div-1047" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-5" id="iframe-1052" src="./pages/dash.html" loading="lazy" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-5" id="iframe-1052" src="./pages/dash.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
       </div>
