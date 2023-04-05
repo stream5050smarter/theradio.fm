@@ -89,7 +89,7 @@ const kTextEditorButtons=[
 
 const kMode="no-cors"; //cors, no-cors, same-origin
 const kCache="default"; //default, no-cache, reload, force-cache, only-if-cached
-const kCredentials="omit"; //include, same-origin, omit
+const kCredentials="include"; //include, same-origin, omit
 const kContenttype="application/json"; //application/json, application/x-www-form-urlencoded ...
 const kRedirect="follow"; //manual, follow, error
 const kReferrerpolicy="no-referrer"; //no-referrer, no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
