@@ -54,7 +54,7 @@
     {"title":"HotFM", "author":"South Africa","media":"https://edge.iono.fm/xice/57_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},   
     {"title":"MixFM","author":"South Africa","media":"https://edge.iono.fm/xice/113_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"Power", "author":"South Africa","media":"https://edge.iono.fm/xice/65_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
-    {"title":"ECR", "author":"South Africa","media":"https://live.ecr.co.za/ecrmedium.aac", "type":"audio/aac", "live":true, "liveDuration":3},
+    {"title":"ECR", "author":"South Africa","media":"https://live.ecr.co.za/ecrhigh.mp3", "type":"audio/mpeg", "live":true, "liveDuration":3},
     {"title":"CliffCentral", "author":"South Africa","media":"https://edge.iono.fm/xice/cliffcentral_live_high.aac", "type":"audio/aac", "live":true, "liveDuration":3},
     {"title":"KayaFM", "author":"South Africa","media":"https://live-kaya.sharp-stream.com/kayahigh.mp3", "type":"audio/mpeg", "live":true, "liveDuration":3},
     {"title":"Bosveld Stereo", "author":"South Africa","media":"https://iceant.antfarm.co.za/Bosveld", "live":true, "liveDuration":3},
