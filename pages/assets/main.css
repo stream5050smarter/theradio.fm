@@ -10,25 +10,7 @@ body {
 	min-width: 320px;
 	overflow-x: hidden;
 	word-wrap: break-word;
-}
-
-body:before {
-	content: '';
-	display: block;
-	background-attachment: scroll;
-	height: var(--background-height);
-	left: 0;
-	pointer-events: none;
-	position: fixed;
-	top: 0;
-	transform: scale(1);
-	width: 100vw;
-	z-index: 0;
-	background-image: linear-gradient(to top, rgba(10,61,46,0.8), rgba(10,61,46,0.8)), url('images/bg.jpg');
-	background-position: 0% 0%, center;
-	background-repeat: repeat, no-repeat;
-	background-size: auto, cover;
-	background-color: #000000;
+	background-color: #1E1E1E;
 }
 
 :root {
@@ -42,7 +24,7 @@ body:before {
 }
 
 html {
-	font-size: 17pt;
+	font-size: 9pt;
 }
 
 u {
@@ -106,7 +88,7 @@ sup {
 a {
 	color: inherit;
 	text-decoration: underline;
-	transition: color 0.25s ease;
+	transition: none;
 }
 
 #wrapper {
@@ -114,11 +96,12 @@ a {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	min-height: var(--viewport-height);
 	overflow: hidden;
 	position: relative;
 	z-index: 2;
+	padding: 0 2rem 2rem 2rem;
 }
 
 #main {
@@ -139,14 +122,14 @@ a {
 	position: relative;
 	text-align: var(--alignment);
 	z-index: 1;
-	transition: opacity 1s ease-in-out 0s;
+	background-color: transparent;
 }
 
 #main > .inner {
-	--padding-horizontal: 4rem;
+	--padding-horizontal: 0rem;
 	--padding-vertical: 4rem;
-	--spacing: 0.75rem;
-	--width: 40rem;
+	--spacing: 0rem;
+	--width: 47rem;
 	border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
 	max-width: 100%;
 	position: relative;
@@ -158,7 +141,6 @@ a {
 #main > .inner > * {
 	margin-top: var(--spacing);
 	margin-bottom: var(--spacing);
-	transition: opacity 1s ease-in-out 0s;
 }
 
 #main > .inner > :first-child {
@@ -195,30 +177,6 @@ a {
 	left: 50%;
 	margin-left: -50vw;
 	right: auto;
-}
-
-body.is-loading #main {
-	opacity: 0;
-}
-
-body.is-loading #main > .inner > * {
-	opacity: 0;
-}
-
-#main > .inner > :nth-child(2) {
-	transition-delay: 0.125s;
-}
-
-#main > .inner > :nth-child(3) {
-	transition-delay: 0.25s;
-}
-
-#main > .inner > :nth-child(4) {
-	transition-delay: 0.375s;
-}
-
-#main > .inner > :nth-child(5) {
-	transition-delay: 0.5s;
 }
 
 body.is-instant #main, body.is-instant #main > .inner > *,body.is-instant #main > .inner > section > *  {
@@ -268,18 +226,14 @@ body.is-instant:after {
 	border-bottom-right-radius: inherit;
 }
 
-#image01 .frame {
-	width: 14rem;
-	height: 14rem;
-	border-radius: 100%;
-	transition: none;
+#image01 {
+	text-align: center;
 }
 
-#image01 img {
-	height: 100% !important;
-	object-fit: cover;
-	object-position: center;
-	width: 100% !important;
+#image01 .frame {
+	width: 27rem;
+	border-radius: 100%;
+	transition: none;
 }
 
 #image01 .frame img {
@@ -300,35 +254,48 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 	-webkit-text-fill-color: currentcolor;
 }
 
-#text03 {
-	color: #FFFFFF;
-	font-family: 'Red Hat Text', sans-serif;
-	letter-spacing: 0.25rem;
-	width: calc(100% + 0.25rem);
-	font-size: 3.125em;
-	line-height: 1.5;
-	font-weight: 400;
+#text09:not(:first-child) {
+	margin-top: 1.375rem !important;
 }
 
-#text03 a {
+#text09:not(:last-child) {
+	margin-bottom: 1.375rem !important;
+}
+
+#text09 {
+	text-align: center;
+	text-transform: lowercase;
+	color: #FFFFFF;
+	font-family: 'Space Grotesk', sans-serif;
+	letter-spacing: 0.175rem;
+	width: calc(100% + 0.175rem);
+	font-size: 5.375em;
+	line-height: 2.5;
+	font-weight: 300;
+}
+
+#text09 a {
 	text-decoration: underline;
 }
 
-#text03 a:hover {
+#text09 a:hover {
 	text-decoration: none;
 }
 
-#text03 span.p:nth-child(n + 2) {
+#text09 span.p:nth-child(n + 2) {
 	margin-top: 1rem;
 }
 
 #text01 {
+	text-align: center;
 	text-transform: lowercase;
-	color: rgba(255,255,255,0.478);
-	font-family: 'Red Hat Display', sans-serif;
-	font-size: 2em;
-	line-height: 1.375;
-	font-weight: 400;
+	color: rgba(255,255,255,0.51);
+	font-family: 'Source Code Pro', monospace;
+	letter-spacing: 0.275rem;
+	width: calc(100% + 0.275rem);
+	font-size: 2.25em;
+	line-height: 1.5;
+	font-weight: 300;
 }
 
 #text01 a {
@@ -340,89 +307,7 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 }
 
 #text01 span.p:nth-child(n + 2) {
-	margin-top: 0.875rem;
-}
-
-.icons {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: var(--flex-alignment);
-	letter-spacing: 0;
-	padding: 0;
-}
-
-.icons li {
-	position: relative;
-	z-index: 1;
-}
-
-.icons li a {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-}
-
-.icons li a svg {
-	display: block;
-	position: relative;
-}
-
-.icons li a + svg {
-	display: block;
-	height: 100%;
-	left: 0;
-	pointer-events: none;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: -1;
-}
-
-.icons li a .label {
-	display: none;
-}
-
-#icons01 {
-	justify-content: center;
-	font-size: 1.875em;
-	gap: 0.75rem;
-}
-
-#icons01:not(:first-child) {
-	margin-top: 2.625rem !important;
-}
-
-#icons01:not(:last-child) {
-	margin-bottom: 2.625rem !important;
-}
-
-#icons01 li a {
-	border-radius: 100%;
-	height: 2em;
-	width: 2em;
-	transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
-}
-
-#icons01 li a svg {
-	height: 60%;
-	width: 60%;
-	transition: fill 0.25s ease;
-}
-
-#icons01 a {
-	background-color: #174C4E;
-}
-
-#icons01 a svg {
-	fill: rgba(255,255,255,0.812);
-}
-
-#icons01 a:hover {
-	background-color: rgba(211,13,13,0.969) !important;
-}
-
-#icons01 li a + svg {
-	transition: fill 0.25s ease, stroke 0.25s ease;
+	margin-top: 1.5rem;
 }
 
 @media (max-width: 1920px) {
@@ -431,13 +316,13 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 
 @media (max-width: 1680px) {
 	html {
-		font-size: 12pt;
+		font-size: 6pt;
 	}
 }
 
 @media (max-width: 1280px) {
 	html {
-		font-size: 12pt;
+		font-size: 6pt;
 	}
 }
 
@@ -447,93 +332,68 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 
 @media (max-width: 980px) {
 	html {
-		font-size: 11pt;
+		font-size: 5pt;
 	}
 }
 
 @media (max-width: 736px) {
 	html {
-		font-size: 10pt;
+		font-size: 5pt;
 	}
 	
 	
 	
 	#main > .inner {
-		--padding-horizontal: 2rem;
+		--padding-horizontal: 0rem;
 		--padding-vertical: 3.5rem;
-		--spacing: 0.75rem;
+		--spacing: 0rem;
 	}
 	
 	#image01 .frame {
-		width: 14rem;
-		height: 17.5rem !important;
+		width: 27rem;
 	}
 	
-	#image01 img {
-		height: 100% !important;
-		object-fit: cover;
-		object-position: center;
-		width: 100% !important;
+	#text09:not(:first-child) {
+		margin-top: 1.03125rem !important;
 	}
 	
-	#text03 {
-		letter-spacing: 0.21875rem;
-		width: calc(100% + 0.21875rem);
-		font-size: 3em;
-		line-height: 1.5;
+	#text09:not(:last-child) {
+		margin-bottom: 1.03125rem !important;
+	}
+	
+	#text09 {
+		letter-spacing: 0.153125rem;
+		width: calc(100% + 0.153125rem);
+		font-size: 3.5em;
+		line-height: 2.5;
 	}
 	
 	#text01 {
-		letter-spacing: 0rem;
-		width: 100%;
-		font-size: 2em;
-		line-height: 1.375;
-	}
-	
-	#icons01 {
-		font-size: 1.875em;
-		gap: 0.75rem;
-	}
-	
-	#icons01:not(:first-child) {
-		margin-top: 1.96875rem !important;
-	}
-	
-	#icons01:not(:last-child) {
-		margin-bottom: 1.96875rem !important;
+		letter-spacing: 0.240625rem;
+		width: calc(100% + 0.240625rem);
+		font-size: 2.25em;
+		line-height: 1.5;
 	}
 }
 
 @media (max-width: 480px) {
 	#main > .inner {
-		--spacing: 0.65625rem;
-	}
-	
-	#image01 .frame {
-		height: 14rem !important;
+		--spacing: 0rem;
 	}
 }
 
 @media (max-width: 360px) {
 	#main > .inner {
-		--padding-horizontal: 1.5rem;
+		--padding-horizontal: 0rem;
 		--padding-vertical: 2.625rem;
-		--spacing: 0.5625rem;
+		--spacing: 0rem;
 	}
 	
-	#image01 .frame {
-		height: 12.25rem !important;
-	}
-	
-	#text03 {
-		font-size: 3em;
+	#text09 {
+		font-size: 3.5em;
 	}
 	
 	#text01 {
-		font-size: 1.5em;
-	}
-	
-	#icons01 {
-		gap: 0.5625rem;
+		font-size: 2em;
 	}
 }

@@ -476,34 +476,6 @@
 			// Expose scrollToElement.
 				window._scrollToTop = scrollToTop;
 	
-	// "On Load" animation.
-		// Create load handler.
-			var loadHandler = function() {
-				setTimeout(function() {
-		
-					// Unmark as loading.
-						$body.classList.remove('is-loading');
-		
-					// Mark as playing.
-						$body.classList.add('is-playing');
-		
-					// Wait for animation complete.
-						setTimeout(function() {
-		
-							// Unmark as playing.
-								$body.classList.remove('is-playing');
-		
-							// Mark as ready.
-								$body.classList.add('is-ready');
-		
-						}, 1500);
-		
-				}, 100);
-			};
-		
-		// Load event.
-			on('load', loadHandler);
-	
 	// Load elements.
 		// Load elements (if needed).
 			loadElements(document.body);
@@ -633,5 +605,743 @@
 					$body.classList.add('is-touch');
 		
 			}
+	
+	// Scroll events.
+		var scrollEvents = {
+		
+			/**
+			 * Items.
+			 * @var {array}
+			 */
+			items: [],
+		
+			/**
+			 * Adds an event.
+			 * @param {object} o Options.
+			 */
+			add: function(o) {
+		
+				this.items.push({
+					element: o.element,
+					triggerElement: (('triggerElement' in o && o.triggerElement) ? o.triggerElement : o.element),
+					enter: ('enter' in o ? o.enter : null),
+					leave: ('leave' in o ? o.leave : null),
+					mode: ('mode' in o ? o.mode : 3),
+					offset: ('offset' in o ? o.offset : 0),
+					initialState: ('initialState' in o ? o.initialState : null),
+					state: false,
+				});
+		
+			},
+		
+			/**
+			 * Handler.
+			 */
+			handler: function() {
+		
+				var	height, top, bottom, scrollPad;
+		
+				// Determine values.
+					if (client.os == 'ios') {
+		
+						height = document.documentElement.clientHeight;
+						top = document.body.scrollTop + window.scrollY;
+						bottom = top + height;
+						scrollPad = 125;
+		
+					}
+					else {
+		
+						height = document.documentElement.clientHeight;
+						top = document.documentElement.scrollTop;
+						bottom = top + height;
+						scrollPad = 0;
+		
+					}
+		
+				// Step through items.
+					scrollEvents.items.forEach(function(item) {
+		
+						var bcr, elementTop, elementBottom, state, a, b;
+		
+						// No enter/leave handlers? Bail.
+							if (!item.enter
+							&&	!item.leave)
+								return true;
+		
+						// No trigger element? Bail.
+							if (!item.triggerElement)
+								return true;
+		
+						// Trigger element not visible?
+							if (item.triggerElement.offsetParent === null) {
+		
+								// Current state is active *and* leave handler exists?
+									if (item.state == true
+									&&	item.leave) {
+		
+										// Reset state to false.
+											item.state = false;
+		
+										// Call it.
+											(item.leave).apply(item.element);
+		
+										// No enter handler? Unbind leave handler (so we don't check this element again).
+											if (!item.enter)
+												item.leave = null;
+		
+									}
+		
+								// Bail.
+									return true;
+		
+							}
+		
+						// Get element position.
+							bcr = item.triggerElement.getBoundingClientRect();
+							elementTop = top + Math.floor(bcr.top);
+							elementBottom = elementTop + bcr.height;
+		
+						// Determine state.
+		
+							// Initial state exists?
+								if (item.initialState !== null) {
+		
+									// Use it for this check.
+										state = item.initialState;
+		
+									// Clear it.
+										item.initialState = null;
+		
+								}
+		
+							// Otherwise, determine state from mode/position.
+								else {
+		
+									switch (item.mode) {
+		
+										// Element falls within viewport.
+											case 1:
+											default:
+		
+												// State.
+													state = (bottom > (elementTop - item.offset) && top < (elementBottom + item.offset));
+		
+												break;
+		
+										// Viewport midpoint falls within element.
+											case 2:
+		
+												// Midpoint.
+													a = (top + (height * 0.5));
+		
+												// State.
+													state = (a > (elementTop - item.offset) && a < (elementBottom + item.offset));
+		
+												break;
+		
+										// Viewport midsection falls within element.
+											case 3:
+		
+												// Upper limit (25%-).
+													a = top + (height * 0.25);
+		
+													if (a - (height * 0.375) <= 0)
+														a = 0;
+		
+												// Lower limit (-75%).
+													b = top + (height * 0.75);
+		
+													if (b + (height * 0.375) >= document.body.scrollHeight - scrollPad)
+														b = document.body.scrollHeight + scrollPad;
+		
+												// State.
+													state = (b > (elementTop - item.offset) && a < (elementBottom + item.offset));
+		
+												break;
+		
+									}
+		
+								}
+		
+						// State changed?
+							if (state != item.state) {
+		
+								// Update state.
+									item.state = state;
+		
+								// Call handler.
+									if (item.state) {
+		
+										// Enter handler exists?
+											if (item.enter) {
+		
+												// Call it.
+													(item.enter).apply(item.element);
+		
+												// No leave handler? Unbind enter handler (so we don't check this element again).
+													if (!item.leave)
+														item.enter = null;
+		
+											}
+		
+									}
+									else {
+		
+										// Leave handler exists?
+											if (item.leave) {
+		
+												// Call it.
+													(item.leave).apply(item.element);
+		
+												// No enter handler? Unbind leave handler (so we don't check this element again).
+													if (!item.enter)
+														item.leave = null;
+		
+											}
+		
+									}
+		
+							}
+		
+					});
+		
+			},
+		
+			/**
+			 * Initializes scroll events.
+			 */
+			init: function() {
+		
+				// Bind handler to events.
+					on('load', this.handler);
+					on('resize', this.handler);
+					on('scroll', this.handler);
+		
+				// Do initial handler call.
+					(this.handler)();
+		
+			}
+		};
+		
+		// Initialize.
+			scrollEvents.init();
+	
+	// "On Visible" animation.
+		var onvisible = {
+		
+			/**
+			 * Effects.
+			 * @var {object}
+			 */
+			effects: {
+				'blur-in': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'filter ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity) {
+						this.style.opacity = 0;
+						this.style.filter = 'blur(' + (0.25 * intensity) + 'rem)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.filter = 'none';
+					},
+				},
+				'zoom-in': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity, alt) {
+						this.style.opacity = 0;
+						this.style.transform = 'scale(' + (1 - ((alt ? 0.25 : 0.05) * intensity)) + ')';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'zoom-out': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity, alt) {
+						this.style.opacity = 0;
+						this.style.transform = 'scale(' + (1 + ((alt ? 0.25 : 0.05) * intensity)) + ')';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'slide-left': {
+					transition: function (speed, delay) {
+						return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function() {
+						this.style.transform = 'translateX(100vw)';
+					},
+					play: function() {
+						this.style.transform = 'none';
+					},
+				},
+				'slide-right': {
+					transition: function (speed, delay) {
+						return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function() {
+						this.style.transform = 'translateX(-100vw)';
+					},
+					play: function() {
+						this.style.transform = 'none';
+					},
+				},
+				'flip-forward': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity, alt) {
+						this.style.opacity = 0;
+						this.style.transformOrigin = '50% 50%';
+						this.style.transform = 'perspective(1000px) rotateX(' + ((alt ? 45 : 15) * intensity) + 'deg)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'flip-backward': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity, alt) {
+						this.style.opacity = 0;
+						this.style.transformOrigin = '50% 50%';
+						this.style.transform = 'perspective(1000px) rotateX(' + ((alt ? -45 : -15) * intensity) + 'deg)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'flip-left': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity, alt) {
+						this.style.opacity = 0;
+						this.style.transformOrigin = '50% 50%';
+						this.style.transform = 'perspective(1000px) rotateY(' + ((alt ? 45 : 15) * intensity) + 'deg)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'flip-right': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity, alt) {
+						this.style.opacity = 0;
+						this.style.transformOrigin = '50% 50%';
+						this.style.transform = 'perspective(1000px) rotateY(' + ((alt ? -45 : -15) * intensity) + 'deg)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'tilt-left': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity, alt) {
+						this.style.opacity = 0;
+						this.style.transform = 'rotate(' + ((alt ? 45 : 5) * intensity) + 'deg)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'tilt-right': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity, alt) {
+						this.style.opacity = 0;
+						this.style.transform = 'rotate(' + ((alt ? -45 : -5) * intensity) + 'deg)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'fade-right': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity) {
+						this.style.opacity = 0;
+						this.style.transform = 'translateX(' + (-1.5 * intensity) + 'rem)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'fade-left': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity) {
+						this.style.opacity = 0;
+						this.style.transform = 'translateX(' + (1.5 * intensity) + 'rem)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'fade-down': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity) {
+						this.style.opacity = 0;
+						this.style.transform = 'translateY(' + (-1.5 * intensity) + 'rem)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'fade-up': {
+					transition: function (speed, delay) {
+						return  'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity) {
+						this.style.opacity = 0;
+						this.style.transform = 'translateY(' + (1.5 * intensity) + 'rem)';
+					},
+					play: function() {
+						this.style.opacity = 1;
+						this.style.transform = 'none';
+					},
+				},
+				'fade-in': {
+					transition: function (speed, delay) {
+						return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function() {
+						this.style.opacity = 0;
+					},
+					play: function() {
+						this.style.opacity = 1;
+					},
+				},
+				'fade-in-background': {
+					custom: true,
+					transition: function (speed, delay) {
+		
+						this.style.setProperty('--onvisible-speed', speed + 's');
+		
+						if (delay)
+							this.style.setProperty('--onvisible-delay', delay + 's');
+		
+					},
+					rewind: function() {
+						this.style.removeProperty('--onvisible-background-color');
+					},
+					play: function() {
+						this.style.setProperty('--onvisible-background-color', 'rgba(0,0,0,0.001)');
+					},
+				},
+				'zoom-in-image': {
+					target: 'img',
+					transition: function (speed, delay) {
+						return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function() {
+						this.style.transform = 'scale(1)';
+					},
+					play: function(intensity) {
+						this.style.transform = 'scale(' + (1 + (0.1 * intensity)) + ')';
+					},
+				},
+				'zoom-out-image': {
+					target: 'img',
+					transition: function (speed, delay) {
+						return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity) {
+						this.style.transform = 'scale(' + (1 + (0.1 * intensity)) + ')';
+					},
+					play: function() {
+						this.style.transform = 'none';
+					},
+				},
+				'focus-image': {
+					target: 'img',
+					transition: function (speed, delay) {
+						return  'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' +
+								'filter ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+					},
+					rewind: function(intensity) {
+						this.style.transform = 'scale(' + (1 + (0.05 * intensity)) + ')';
+						this.style.filter = 'blur(' + (0.25 * intensity) + 'rem)';
+					},
+					play: function(intensity) {
+						this.style.transform = 'none';
+						this.style.filter = 'none';
+					},
+				},
+			},
+		
+			/**
+			 * Adds one or more animatable elements.
+			 * @param {string} selector Selector.
+			 * @param {object} settings Settings.
+			 */
+			add: function(selector, settings) {
+		
+				var style = settings.style in this.effects ? settings.style : 'fade',
+					speed = parseInt('speed' in settings ? settings.speed : 1000) / 1000,
+					intensity = ((parseInt('intensity' in settings ? settings.intensity : 5) / 10) * 1.75) + 0.25,
+					delay = parseInt('delay' in settings ? settings.delay : 0) / 1000,
+					replay = 'replay' in settings ? settings.replay : false,
+					stagger = 'stagger' in settings ? (parseInt(settings.stagger) > -125 ? (parseInt(settings.stagger) / 1000) : false) : false,
+					staggerOrder = 'staggerOrder' in settings ? settings.staggerOrder : 'default',
+					state = 'state' in settings ? settings.state : null,
+					effect = this.effects[style];
+		
+				// Step through selected elements.
+					$$(selector).forEach(function(e) {
+		
+						var children = (stagger !== false) ? e.querySelectorAll(':scope > li, :scope ul > li') : null,
+							enter = function(staggerDelay=0) {
+		
+								var _this = this,
+									transitionOrig;
+		
+								// Target provided? Use it instead of element.
+									if (effect.target)
+										_this = this.querySelector(effect.target);
+		
+								// Not a custom effect?
+									if (!effect.custom) {
+		
+										// Save original transition.
+											transitionOrig = _this.style.transition;
+		
+										// Apply temporary styles.
+											_this.style.setProperty('backface-visibility', 'hidden');
+		
+										// Apply transition.
+											_this.style.transition = effect.transition(speed, delay + staggerDelay);
+		
+									}
+		
+								// Otherwise, call custom transition handler.
+									else
+										effect.transition.apply(_this, [speed, delay + staggerDelay]);
+		
+								// Play.
+									effect.play.apply(_this, [intensity, !!children]);
+		
+								// Not a custom effect?
+									if (!effect.custom)
+										setTimeout(function() {
+		
+											// Remove temporary styles.
+												_this.style.removeProperty('backface-visibility');
+		
+											// Restore original transition.
+												_this.style.transition = transitionOrig;
+		
+										}, (speed + delay + staggerDelay) * 1000 * 2);
+		
+							},
+							leave = function() {
+		
+								var _this = this,
+									transitionOrig;
+		
+								// Target provided? Use it instead of element.
+									if (effect.target)
+										_this = this.querySelector(effect.target);
+		
+								// Not a custom effect?
+									if (!effect.custom) {
+		
+										// Save original transition.
+											transitionOrig = _this.style.transition;
+		
+										// Apply temporary styles.
+											_this.style.setProperty('backface-visibility', 'hidden');
+		
+										// Apply transition.
+											_this.style.transition = effect.transition(speed);
+		
+									}
+		
+								// Otherwise, call custom transition handler.
+									else
+										effect.transition.apply(_this, [speed]);
+		
+								// Rewind.
+									effect.rewind.apply(_this, [intensity, !!children]);
+		
+								// Not a custom effect?
+									if (!effect.custom)
+										setTimeout(function() {
+		
+											// Remove temporary styles.
+												_this.style.removeProperty('backface-visibility');
+		
+											// Restore original transition.
+												_this.style.transition = transitionOrig;
+		
+										}, speed * 1000 * 2);
+		
+							},
+							targetElement, triggerElement;
+		
+						// Initial rewind.
+		
+							// Determine target element.
+								if (effect.target)
+									targetElement = e.querySelector(effect.target);
+								else
+									targetElement = e;
+		
+							// Children? Rewind each individually.
+								if (children)
+									children.forEach(function(targetElement) {
+										effect.rewind.apply(targetElement, [intensity, true]);
+									});
+		
+							// Otherwise. just rewind element.
+								else
+									effect.rewind.apply(targetElement, [intensity]);
+		
+						// Determine trigger element.
+							triggerElement = e;
+		
+							// Has a parent?
+								if (e.parentNode) {
+		
+									// Parent is an onvisible trigger? Use it.
+										if (e.parentNode.dataset.onvisibleTrigger)
+											triggerElement = e.parentNode;
+		
+									// Otherwise, has a grandparent?
+										else if (e.parentNode.parentNode) {
+		
+											// Grandparent is an onvisible trigger? Use it.
+												if (e.parentNode.parentNode.dataset.onvisibleTrigger)
+													triggerElement = e.parentNode.parentNode;
+		
+										}
+		
+								}
+		
+						// Add scroll event.
+							scrollEvents.add({
+								element: e,
+								triggerElement: triggerElement,
+								initialState: state,
+								enter: children ? function() {
+		
+									var staggerDelay = 0,
+										childHandler = function(e) {
+		
+											// Apply enter handler.
+												enter.apply(e, [staggerDelay]);
+		
+											// Increment stagger delay.
+												staggerDelay += stagger;
+		
+										},
+										a;
+		
+									// Default stagger order?
+										if (staggerOrder == 'default') {
+		
+											// Apply child handler to children.
+												children.forEach(childHandler);
+		
+										}
+		
+									// Otherwise ...
+										else {
+		
+											// Convert children to an array.
+												a = Array.from(children);
+		
+											// Sort array based on stagger order.
+												switch (staggerOrder) {
+		
+													case 'reverse':
+		
+														// Reverse array.
+															a.reverse();
+		
+														break;
+		
+													case 'random':
+		
+														// Randomly sort array.
+															a.sort(function() {
+																return Math.random() - 0.5;
+															});
+		
+														break;
+		
+												}
+		
+											// Apply child handler to array.
+												a.forEach(childHandler);
+		
+										}
+		
+								} : enter,
+								leave: (replay ? (children ? function() {
+		
+									// Step through children.
+										children.forEach(function(e) {
+		
+											// Apply leave handler.
+												leave.apply(e);
+		
+										});
+		
+								} : leave) : null),
+							});
+		
+					});
+		
+				},
+		
+		};
+	
+	// Initialize "On Visible" animations.
+		onvisible.add('#image01', { style: 'fade-in', speed: 1000, intensity: 5, delay: 0, staggerOrder: '', state: true, replay: true });
+		onvisible.add('#text09', { style: 'fade-in', speed: 1000, intensity: 5, delay: 0, staggerOrder: '', state: true, replay: true });
+		onvisible.add('#text01', { style: 'fade-in', speed: 1375, intensity: 5, delay: 750, staggerOrder: '', state: true, replay: true });
 
 })();
