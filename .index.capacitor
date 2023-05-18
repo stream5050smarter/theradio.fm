@@ -32,12 +32,12 @@
           <div id="navbg-o-1005" class="navbar-bg"></div>
           <div id="navbar-inner-o-1006" class="navbar-inner">
               <div id="left-o-1007" class="left"></div>
-                      <div id="title-o-1008" class="title"></div>
-                      <div id="right-o-1009" class="right"></div>
+              <div id="title-o-1008" class="title"></div>
+              <div id="right-o-1009" class="right"></div>
           </div>
       </div>
   
-  <div id="toolbar-o-1010" class="toolbar toolbar-bottom tabbar tabbar-labels">
+  	<div id="toolbar-o-1010" class="toolbar toolbar-bottom tabbar tabbar-labels">
           <div id="o-1011" class="toolbar-inner">
               <a id="o-1012" href="#tab-1" class="tab-link tab-link-active">
                   <i id="o-1013" class="icon f7-icons ios-only"> playpause_fill </i>
@@ -51,23 +51,29 @@
                         <i id="o-1020" class="icon f7-icons md-only"> tv_music_note </i>
                        <span id="o-1021" class="tabbar-label">Video</span>
               </a>
-                    <a id="o-1022" href="#tab-3" class="tab-link">
-                  <i id="o-1023" class="icon f7-icons ios-only"> hifispeaker </i>
-                        <i id="o-1024" class="icon icon-fill f7-icons ios-only"> hifispeaker </i>
-                        <i id="o-1025" class="icon f7-icons md-only"> hifispeaker </i>
-                       <span id="o-1026" class="tabbar-label">Thoughts</span>
-              </a>
-              <a id="o-1027" href="#tab-4" class="tab-link">
-                  <i id="o-1028" class="icon f7-icons ios-only"> chat_bubble </i>
-                        <i id="o-1029" class="icon icon-fill f7-icons ios-only"> chat_bubble </i>
-                        <i id="o-1030" class="icon f7-icons md-only"> chat_bubble </i>
+              <a id="o-1027" href="#tab-3" class="tab-link">
+                  <i id="o-1028" class="icon f7-icons ios-only"> hifispeaker </i>
+                        <i id="o-1029" class="icon icon-fill f7-icons ios-only"> hifispeaker </i>
+                        <i id="o-1030" class="icon f7-icons md-only"> hifispeaker </i>
                        <span id="o-1031" class="tabbar-label">Flow</span>
+              </a>  
+	      <a id="o-1032" href="#tab-4" class="tab-link">
+                  <i id="o-1033" class="icon f7-icons ios-only"> bookmark </i>
+                        <i id="o-1034" class="icon icon-fill f7-icons ios-only"> bookmark </i>
+                        <i id="o-1035" class="icon f7-icons md-only"> bookmark </i>
+                       <span id="o-1036" class="tabbar-label">Blog</span>
               </a>
-              <a id="o-1032" href="#tab-5" class="tab-link">
-                  <i id="o-1033" class="icon f7-icons ios-only"> music_note_list </i>
-                        <i id="o-1034" class="icon icon-fill f7-icons ios-only"> music_note_list </i>
-                        <i id="o-1035" class="icon f7-icons md-only"> music_note_list </i>
-                       <span id="o-1036" class="tabbar-label">More</span>
+	      <a id="o-1022" href="#tab-5" class="tab-link">
+                  <i id="o-1023" class="icon f7-icons ios-only"> chat_bubble </i>
+                        <i id="o-1024" class="icon icon-fill f7-icons ios-only"> chat_bubble </i>
+                        <i id="o-1025" class="icon f7-icons md-only"> chat_bubble </i>
+                       <span id="o-1026" class="tabbar-label">ZapGPT</span>
+              </a>
+	      <a id="o-1037" href="#tab-6" class="tab-link">
+                  <i id="o-1038" class="icon f7-icons ios-only"> music_note_list </i>
+                        <i id="o-1039" class="icon icon-fill f7-icons ios-only"> music_note_list </i>
+                        <i id="o-1040" class="icon f7-icons md-only"> music_note_list </i>
+                       <span id="o-1041" class="tabbar-label">More</span>
               </a>
               </div>
         </div>
@@ -75,32 +81,37 @@
       <div id="tabs-o-1037" class="tabs">
           <div id="tab-0" class="page-content tab tab-active">	
               <div id="div-2043" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-0" id="iframe-2048" src="https://theradiofm.carrd.co" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-0" id="iframe-1047" src="https://landing.theradio.fm/" class="embed-responsive-item"></iframe>
               </div>
           </div>
 	  <div id="tab-1" class="page-content tab tab">	
               <div id="div-1043" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-1" id="iframe-1048" src="./pages/radio.html" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-1" id="iframe-1048" src="pages/radios.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
           <div id="tab-2" class="page-content tab">
               <div id="div-1044" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-2" id="iframe-1049" src="./pages/youtube1.html" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-2" id="iframe-1049" src="pages/youtube1.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
           <div id="tab-3" class="page-content tab">
               <div id="div-1045" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-3" id="iframe-1050" src="./pages/blog.html" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-3" id="iframe-1050" src="pages/wall.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
           <div id="tab-4" class="page-content tab">
               <div id="div-1046" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-4" id="iframe-1051" src="./pages/wall.html" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-4" id="iframe-1051" src="pages/blog.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
           <div id="tab-5" class="page-content tab">
               <div id="div-1047" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-5" id="iframe-1052" src="./pages/dash.html" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-5" id="iframe-1052" src="pages/zapgpt.html" class="embed-responsive-item"></iframe>
+              </div>
+          </div>
+	  <div id="tab-6" class="page-content tab">
+              <div id="div-1047" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
+                  <iframe title="tab-5" id="iframe-1052" src="pages/dash.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
       </div>
