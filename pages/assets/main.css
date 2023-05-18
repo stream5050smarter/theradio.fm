@@ -42,7 +42,7 @@ body:before {
 }
 
 html {
-	font-size: 16pt;
+	font-size: 17pt;
 }
 
 u {
@@ -119,7 +119,6 @@ a {
 	overflow: hidden;
 	position: relative;
 	z-index: 2;
-	padding: 3rem 3rem 3rem 3rem;
 }
 
 #main {
@@ -127,10 +126,10 @@ a {
 	--flex-alignment: center;
 	--indent-left: 1;
 	--indent-right: 1;
-	--border-radius-tl: 1.75rem;
-	--border-radius-tr: 1.75rem;
-	--border-radius-br: 1.75rem;
-	--border-radius-bl: 1.75rem;
+	--border-radius-tl: 0;
+	--border-radius-tr: 0;
+	--border-radius-br: 0;
+	--border-radius-bl: 0;
 	align-items: center;
 	display: flex;
 	flex-grow: 0;
@@ -140,14 +139,12 @@ a {
 	position: relative;
 	text-align: var(--alignment);
 	z-index: 1;
-	background-color: rgba(0,0,0,0.239);
-	border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
 	transition: opacity 1s ease-in-out 0s;
 }
 
 #main > .inner {
 	--padding-horizontal: 4rem;
-	--padding-vertical: 2rem;
+	--padding-vertical: 4rem;
 	--spacing: 0.75rem;
 	--width: 40rem;
 	border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
@@ -272,8 +269,8 @@ body.is-instant:after {
 }
 
 #image01 .frame {
-	width: 12rem;
-	height: 12rem;
+	width: 14rem;
+	height: 14rem;
 	border-radius: 100%;
 	transition: none;
 }
@@ -329,7 +326,7 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 	text-transform: lowercase;
 	color: rgba(255,255,255,0.478);
 	font-family: 'Red Hat Display', sans-serif;
-	font-size: 1.75em;
+	font-size: 2em;
 	line-height: 1.375;
 	font-weight: 400;
 }
@@ -450,7 +447,7 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 
 @media (max-width: 980px) {
 	html {
-		font-size: 10pt;
+		font-size: 11pt;
 	}
 }
 
@@ -461,19 +458,15 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 	
 	
 	
-	#wrapper {
-		padding: 3rem 3rem 3rem 3rem;
-	}
-	
 	#main > .inner {
 		--padding-horizontal: 2rem;
-		--padding-vertical: 2rem;
+		--padding-vertical: 3.5rem;
 		--spacing: 0.75rem;
 	}
 	
 	#image01 .frame {
-		width: 12rem;
-		height: 15rem !important;
+		width: 14rem;
+		height: 17.5rem !important;
 	}
 	
 	#image01 img {
@@ -493,7 +486,7 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 	#text01 {
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.75em;
+		font-size: 2em;
 		line-height: 1.375;
 	}
 	
@@ -512,32 +505,24 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 }
 
 @media (max-width: 480px) {
-	#wrapper {
-		padding: 2.25rem 2.25rem 2.25rem 2.25rem;
-	}
-	
 	#main > .inner {
 		--spacing: 0.65625rem;
 	}
 	
 	#image01 .frame {
-		height: 12rem !important;
+		height: 14rem !important;
 	}
 }
 
 @media (max-width: 360px) {
-	#wrapper {
-		padding: 2.0625rem 2.0625rem 2.0625rem 2.0625rem;
-	}
-	
 	#main > .inner {
 		--padding-horizontal: 1.5rem;
-		--padding-vertical: 1.5rem;
+		--padding-vertical: 2.625rem;
 		--spacing: 0.5625rem;
 	}
 	
 	#image01 .frame {
-		height: 10.5rem !important;
+		height: 12.25rem !important;
 	}
 	
 	#text03 {
