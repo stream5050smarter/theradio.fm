@@ -6,25 +6,15 @@
 }
 
 html, body, iframe {
-                        margin:0;
-                        padding:0;
-                        top:0;
-                        left:0;
-                        bottom:0;
-                        right:0;
-                        height:100vh;
-			min-height:800px;
-			max-height:1024px;
-                        z-index:999999;
-                        }
-            	iframe {
-			position:fixed;
-                        overflow:hidden;
-                        display:block;
-                        width:100vw;
-			min-width:600px;
-		    	max-width:100%;
-                        border:none;
-                        }
+	height:100vh;
+	z-index:999999;
+	}
+iframe {
+	overflow:hidden;
+	display:block;
+	width:100vw;
+	min-width:600px;
+	max-width:100%;
+	}
 
     
