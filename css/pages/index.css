@@ -13,9 +13,12 @@ html, body, iframe {
                         bottom:0;
                         right:0;
                         height:100vh;
+			min-height:800px;
+			max-height:1024px;
                         z-index:999999;
                         }
             	iframe {
+			position:fixed;
                         overflow:hidden;
                         display:block;
                         width:100vw;
