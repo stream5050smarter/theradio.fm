@@ -32,7 +32,7 @@
     "titleSize": 14,
     "authorSize": 10,
     "dockToRight": false,
-    "autoPlay":true,
+    "autoPlay":false,
     "shuffle":true,
     "entries":     
   [
