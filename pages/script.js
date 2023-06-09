@@ -1,10 +1,10 @@
 // Array of prepopulated strings
 var strings = [
-  "https://www.youtube-nocookie.com/embed/videoseries?list=PLuWIxgNYqm0ketpCdUpLK4zjreYpDlLoE",
-  "https://www.youtube-nocookie.com/embed/videoseries?list=PLuWIxgNYqm0lwRXD3Sqe2_ZryiljuW-L9",
-  "https://www.youtube-nocookie.com/embed/videoseries?list=PLuWIxgNYqm0lnbXjnFF3bdEBbRHkr-R3k",
-  "https://www.youtube-nocookie.com/embed/videoseries?list=PLuWIxgNYqm0mQd_Z6eYbNa8Riyjl0znGC",
-  "https://www.youtube-nocookie.com/embed/videoseries?list=PLuWIxgNYqm0lXxPLZ9hBT9M46m53H5GES"
+  "PLuWIxgNYqm0ketpCdUpLK4zjreYpDlLoE",
+  "PLuWIxgNYqm0lwRXD3Sqe2_ZryiljuW-L9",
+  "PLuWIxgNYqm0lnbXjnFF3bdEBbRHkr-R3k",
+  "PLuWIxgNYqm0mQd_Z6eYbNa8Riyjl0znGC",
+  "PLuWIxgNYqm0lXxPLZ9hBT9M46m53H5GES"
 ];
 
 function generateRandomString() {
