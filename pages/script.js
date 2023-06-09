@@ -7,16 +7,16 @@ var strings = [
   "PLuWIxgNYqm0lXxPLZ9hBT9M46m53H5GES"
 ];
 
-function generateRandomString() {
+function generateRandomPlaylist() {
   // Get a random index from the strings array
   var randomIndex = Math.floor(Math.random() * strings.length);
   
   // Get the string at the random index
-  var randomString = strings[randomIndex];
+  var randomPlaylist = strings[randomIndex];
   
   // Set the src attribute of the iframe to the random string
-  document.getElementById("flexi-flux").src = randomString;
+  document.getElementById("flexi-flux").src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + randomPlaylist;
 }
 
 // Call the function when the page loads
-window.addEventListener("load", generateRandomString);
+window.addEventListener("load", generateRandomPlaylist);
