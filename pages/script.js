@@ -15,7 +15,7 @@ function generateRandomPlaylist() {
   var randomPlaylist = strings[randomIndex];
   
   // Set the src attribute of the iframe to the random string
-  document.getElementById("iframePlaylist").src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + randomPlaylist;
+  document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + randomPlaylist;
 }
 
 // Call the function when the page loads
