@@ -48,7 +48,7 @@
   </style>
   </head>
   <body>
-    <iframe title="YouTube Dynamic Web/Mobile Playlist" id="iframePlaylist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe title="YouTube Dynamic Web/Mobile Playlist" id="playlistiframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <script>
 	// Array of prepopulated strings
 	var strings = [
@@ -67,7 +67,7 @@
 	  var randomPlaylist = strings[randomIndex];
 
 	  // Set the src attribute of the iframe to the random string
-	  document.getElementById("iframePlaylist").src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + randomPlaylist;
+	  document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + randomPlaylist;
 	}
 
 	// Call the function when the page loads
