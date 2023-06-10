@@ -28,7 +28,7 @@
     "timeSize": 20,
     "randomColors": true,
     "textColor": "#FFFFFF",
-    "textAlpha": 0.3,
+    "textAlpha": 0.9,
     "titleSize": 14,
     "authorSize": 10,
     "dockToRight": false,
