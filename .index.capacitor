@@ -51,23 +51,23 @@
                         <i id="o-1020" class="icon f7-icons md-only"> tv_music_note </i>
                        <span id="o-1021" class="tabbar-label">Video</span>
               </a>
-              <a id="o-1027" href="#tab-3" class="tab-link">
-                  <i id="o-1028" class="icon f7-icons ios-only"> hifispeaker </i>
-                        <i id="o-1029" class="icon icon-fill f7-icons ios-only"> hifispeaker </i>
-                        <i id="o-1030" class="icon f7-icons md-only"> hifispeaker </i>
-                       <span id="o-1031" class="tabbar-label">Flow</span>
+              <a id="o-1022" href="#tab-3" class="tab-link">
+                  <i id="o-1023" class="icon f7-icons ios-only"> hifispeaker </i>
+                        <i id="o-1024" class="icon icon-fill f7-icons ios-only"> hifispeaker </i>
+                        <i id="o-1025" class="icon f7-icons md-only"> hifispeaker </i>
+                       <span id="o-1026" class="tabbar-label">Flow</span>
               </a>  
-	      <a id="o-1032" href="#tab-4" class="tab-link">
-                  <i id="o-1033" class="icon f7-icons ios-only"> bookmark </i>
-                        <i id="o-1034" class="icon icon-fill f7-icons ios-only"> bookmark </i>
-                        <i id="o-1035" class="icon f7-icons md-only"> bookmark </i>
-                       <span id="o-1036" class="tabbar-label">Blog</span>
+	      <a id="o-1027" href="#tab-4" class="tab-link">
+                  <i id="o-1028" class="icon f7-icons ios-only"> bookmark </i>
+                        <i id="o-1029" class="icon icon-fill f7-icons ios-only"> bookmark </i>
+                        <i id="o-1030" class="icon f7-icons md-only"> bookmark </i>
+                       <span id="o-1031" class="tabbar-label">Blog</span>
               </a>
-	      <a id="o-1022" href="#tab-5" class="tab-link">
-                  <i id="o-1023" class="icon f7-icons ios-only"> chat_bubble </i>
-                        <i id="o-1024" class="icon icon-fill f7-icons ios-only"> chat_bubble </i>
-                        <i id="o-1025" class="icon f7-icons md-only"> chat_bubble </i>
-                       <span id="o-1026" class="tabbar-label">ZapGPT</span>
+	      <a id="o-1032" href="#tab-5" class="tab-link">
+                  <i id="o-1033" class="icon f7-icons ios-only"> chat_bubble </i>
+                        <i id="o-1034" class="icon icon-fill f7-icons ios-only"> chat_bubble </i>
+                        <i id="o-1035" class="icon f7-icons md-only"> chat_bubble </i>
+                       <span id="o-1036" class="tabbar-label">ZapGPT</span>
               </a>
 	      <a id="o-1037" href="#tab-6" class="tab-link">
                   <i id="o-1038" class="icon f7-icons ios-only"> music_note_list </i>
@@ -75,71 +75,48 @@
                         <i id="o-1040" class="icon f7-icons md-only"> music_note_list </i>
                        <span id="o-1041" class="tabbar-label">More</span>
               </a>
-              </div>
-        </div>
+          </div>
+      </div>
     
-      <div id="tabs-o-1037" class="tabs">
+      <div id="tabs-o-2010" class="tabs">
           <div id="tab-0" class="page-content tab tab-active">	
-              <div id="div-2043" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-0" id="iframe-1047" src="pages/cover.html" class="embed-responsive-item"></iframe>
+              <div id="div-1040" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
+                  <iframe title="tab-0" id="iframe-1040" src="pages/cover.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
-	  <div id="tab-1" class="page-content tab tab">	
-              <div id="div-1043" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-1" id="iframe-1048" src="pages/radios.html" class="embed-responsive-item"></iframe>
+	  <div id="tab-1" class="page-content tab">	
+              <div id="div-1041" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
+                  <iframe title="tab-1" id="iframe-1041" src="pages/radios.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
           <div id="tab-2" class="page-content tab">
-              <div id="div-1044" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-2" id="iframe-1049" src="pages/youtube.html" class="embed-responsive-item"></iframe>
+              <div id="div-1042" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
+                  <iframe title="tab-2" id="iframe-1042" src="pages/youtube.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
           <div id="tab-3" class="page-content tab">
-              <div id="div-1045" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-3" id="iframe-1050" src="pages/wall.html" class="embed-responsive-item"></iframe>
+              <div id="div-1043" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
+                  <iframe title="tab-3" id="iframe-1043" src="pages/wall.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
           <div id="tab-4" class="page-content tab">
-              <div id="div-1046" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-4" id="iframe-1051" src="pages/blog.html" class="embed-responsive-item"></iframe>
+              <div id="div-1044" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
+                  <iframe title="tab-4" id="iframe-1044" src="pages/blog.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
           <div id="tab-5" class="page-content tab">
-              <div id="div-1047" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-5" id="iframe-1052" src="pages/zapgpt.html" class="embed-responsive-item"></iframe>
+              <div id="div-1045" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
+                  <iframe title="tab-5" id="iframe-1045" src="pages/zapgpt.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
 	  <div id="tab-6" class="page-content tab">
-              <div id="div-1047" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-5" id="iframe-1052" src="pages/dash.html" class="embed-responsive-item"></iframe>
+              <div id="div-1046" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
+                  <iframe title="tab-6" id="iframe-1046" src="pages/dash.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
       </div>
   
   </div></div></div>
-  
-  <!-- TEXT VIEWER -->
-  <div class="sheet-modal text-viewer-popup">
-      <div class="toolbar">
-          <div class="toolbar-inner">
-              <div class="left">
-                  <a class="link" href="#"><i class="link fa f7-icons text-viewer-smaller">textformat_alt</i></a>
-                  <a class="link" href="#"><i class="link fa f7-icons text-viewer-bigger">textformat_alt</i></a>
-              </div>
-              <div class="right">
-                  <a class="link sheet-close"><i class="fa f7-icons">xmark_circle_fill</i></a>
-              </div>
-          </div>
-      </div>
-      <div class="sheet-modal-inner">
-          <div class="block block-text"></div>
-      </div>
-     </div>
-    </div>
-    
-    </div>
-    </div>
-    </div>
   
     <script type="text/javascript" src="js/service-worker-register.js"></script>
     <script type="text/javascript" src="js/framework/framework7-bundle.min.js"></script>
