@@ -11,6 +11,6 @@ body {
 
 .backBtn {
   position: fixed;
-  left: 40%;
-  top: 50%;
+  left: 1rem;
+  top: 1rem;
 }
