@@ -116,7 +116,7 @@
           <div id="navbg-o-1005" class="navbar-bg"></div>
           <div id="navbar-inner-o-1006" class="navbar-inner">
               <div id="left-o-1007" class="left">
-		   <a href="#" class="back link" onclick="document.getElementById('iframe-1046').src='pages/dash.html'">
+		   <a id="backbtn" visible="false" href="#" class="back link" onclick="document.getElementById('iframe-1046').src='pages/dash.html'">
 		        <i class="icon icon-back"></i>
 		        <span>Back</span>
 	          </a>
@@ -166,9 +166,11 @@
               </a>
           </div>
       </div>
-    
+
+
+	            
       <div id="tabs-o-2010" class="tabs">
-          <div id="tab-0" class="page-content tab tab-active">	
+          <div id="tab-0" class="page-content tab tab-active">
               <div id="div-1040" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
                   <iframe title="tab-0" id="iframe-1040" src="pages/cover.html" class="embed-responsive-item"></iframe>
               </div>
@@ -198,13 +200,23 @@
                   <iframe title="tab-5" id="iframe-1045" src="pages/zapgpt.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
-	  <div id="tab-6" class="page-content tab">
+	  <div id="tab-6" class="page-content tab back">	 
 	      <!--<button class="button button1" href="#" onclick="document.getElementById('iframe-1046').src='pages/dash.html'">Return</button>-->
               <div id="div-1046" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
                   <iframe title="tab-6" id="iframe-1046" src="pages/dash.html" class="embed-responsive-item"></iframe>
               </div>
           </div>
       </div>
+
+<script>
+	var tabLink = $('.tab');
+	if (tabLink.hasClass('tab-active') && tabLink.hasClass('back') 
+	{
+		document.getElementById("backbtn").visible = "true";
+	} else {
+		document.getElementById("backbtn").visible = "false";
+	}
+</script>
 	      
   </div></div></div>
   
