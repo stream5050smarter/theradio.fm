@@ -115,7 +115,9 @@
       <div id="navbar-o-1004" class="navbar">
           <div id="navbg-o-1005" class="navbar-bg"></div>
           <div id="navbar-inner-o-1006" class="navbar-inner">
-              <div id="left-o-1007" class="left"></div>
+              <div id="left-o-1007" class="left">
+		      
+	      </div>
               <div id="title-o-1008" class="title"></div>
               <div id="right-o-1009" class="right"></div>
           </div>
@@ -153,6 +155,15 @@
                         <i id="o-1035" class="icon f7-icons md-only"> chat_bubble </i>
                        <span id="o-1036" class="tabbar-label">ZapGPT</span>
               </a>
+		  <a href="#" class="back link">
+		        <i class="icon icon-back"></i>
+		        <span>Back</span>
+		      </a>
+		  <script>
+			$$('.back').on('click', function () {
+			  document.getElementById('iframe-1046').src='pages/dash.html'"
+			});
+		  </script>	  
 	      <a id="o-1037" href="#tab-6" class="tab-link">
                   <i id="o-1038" class="icon f7-icons ios-only"> music_note_list </i>
                         <i id="o-1039" class="icon icon-fill f7-icons ios-only"> music_note_list </i>
@@ -194,7 +205,7 @@
               </div>
           </div>
 	  <div id="tab-6" class="page-content tab">
-	      <button class="button button1" href="#" onclick="document.getElementById('iframe-1046').src='pages/dash.html'">Return</button>
+	      <!--<button class="button button1" href="#" onclick="document.getElementById('iframe-1046').src='pages/dash.html'">Return</button>-->
               <div id="div-1046" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
                   <iframe title="tab-6" id="iframe-1046" src="pages/dash.html" class="embed-responsive-item"></iframe>
               </div>
@@ -226,6 +237,12 @@
     </div>
     </div>
 
+	<script>
+		$$('.back').on('click', function () {
+		  mainView.router.back();
+		});
+	</script>
+	
     <script type="text/javascript" src="js/service-worker-register.js"></script>
     <script type="text/javascript" src="js/framework/framework7-bundle.min.js"></script>
     <script type="text/javascript" src="js/thorium.config.js"></script>
