@@ -131,7 +131,7 @@
   
   	<div id="toolbar-o-1010" class="toolbar toolbar-bottom tabbar tabbar-labels">
           <div id="o-1011" class="toolbar-inner">
-              <a id="o-1012" href="#tab-1" class="tab-link tab-link-active">
+              <a id="o-1012" href="#tab-1" class="tab-link">
                   <i id="o-1013" class="icon f7-icons ios-only"> playpause_fill </i>
                         <i id="o-1014" class="icon icon-fill f7-icons ios-only"> playpause_fill </i>
                         <i id="o-1015" class="icon f7-icons md-only"> playpause_fill </i>
@@ -175,12 +175,12 @@
       <div id="tabs-o-2010" class="tabs">
           <div id="tab-0" class="page-content tab tab-active">
               <div id="div-1040" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-0" id="iframe-1040" src="/pages/cover.html" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-0" id="iframe-1040" src="/pages/cover" class="embed-responsive-item"></iframe>
               </div>
           </div>
 	  <div id="tab-1" class="page-content tab">	
               <div id="div-1041" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-1" id="iframe-1041" src="" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-1" id="iframe-1041" src="/pages/youtube" class="embed-responsive-item"></iframe>
               </div>
           </div>
           <div id="tab-2" class="page-content tab">
@@ -253,16 +253,17 @@
     <script type="text/javascript" src="js/plugins/thorium.core.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   
-    <script>thoriumCorePlugin.appLoaded();</script>
+   
     <script>
-	document.addEventListener("DOMContentLoaded", () => {
-	  document.getElementById("iframe-1041").src = "/pages/radios.html";
-	  document.getElementById("iframe-1042").src = "/pages/youtube.html";
-	  document.getElementById("iframe-1043").src = "/pages/wall.html";
-	  document.getElementById("iframe-1044").src = "/pages/blog.html";
-	  document.getElementById("iframe-1045").src = "/pages/zapgpt.html";
-	  document.getElementById("iframe-1046").src = "/pages/dash.html";
-	});    
+	document.addEventListener("DOMContentLoaded", () => {document.getElementById("iframe-1041").src = "/pages/radios";});
+	//document.addEventListener("DOMContentLoaded", () => {document.getElementById("iframe-1042").src = "/pages/youtube";});
+	document.addEventListener("DOMContentLoaded", () => {document.getElementById("iframe-1043").src = "/pages/wall";});
+	document.addEventListener("DOMContentLoaded", () => {document.getElementById("iframe-1044").src = "/pages/blog";});
+	document.addEventListener("DOMContentLoaded", () => {document.getElementById("iframe-1045").src = "/pages/zapgpt";});
+	document.addEventListener("DOMContentLoaded", () => {document.getElementById("iframe-1045").src = "/pages/dash";});  
    </script>
+
+   <script>thoriumCorePlugin.appLoaded();</script>
+	
   </body>
 </html>
