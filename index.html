@@ -116,12 +116,12 @@
           <div id="navbg-o-1005" class="navbar-bg"></div>
           <div id="navbar-inner-o-1006" class="navbar-inner">
               <div id="left-o-1007" class="left">
-		   <span id="backbtn" visibility="hidden">   
+		   <div id="backbtn" style="display:none">   
 			   <a href="#" class="back link" onclick="document.getElementById('iframe-1046').src='pages/dash.html'">
 			        <i class="icon icon-back"></i>
 			        <span>Back</span>
 		          </a>
-	          </span>
+	          </div>
 	      </div>
               <div id="title-o-1008" class="title"></div>
               <div id="right-o-1009" class="right"></div>
@@ -214,9 +214,9 @@
 	var tabLink = $('.tab');
 	if (tabLink.hasClass('tab-active') && tabLink.hasClass('back') 
 	{
-		document.getElementById("backbtn").visibility = "true";
+		document.getElementById("backbtn").style.display = "block";
 	} else {
-		document.getElementById("backbtn").visibility = "hidden";
+		document.getElementById("backbtn").style.display = "none";
 	}
 </script>
 	      
