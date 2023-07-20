@@ -2,6 +2,8 @@
 
 ## theradio.fm is a structured PWA browser mainly serving streaming content from my YouTube Channel: [mo͞ozik @theradiostream](https://www.youtube.com/@theradiostream)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/79651d84-a14a-4d70-88c7-aa18348782b7/deploy-status)](https://app.netlify.com/sites/theradio-fm/deploys)
+
 ### About
 theradio.fm is mobile first and easy to use. It runs on all desktop and mobile devices. Sometimes allowed to deliver South African live radio, or the latest YouTube music videos and YouTube radio. Pivoting on Twitter and some other social media which is used for simple promotion and reach.
 
