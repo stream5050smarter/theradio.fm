@@ -14,7 +14,7 @@
 
         .spinner {
             border: 16px solid #BF2D23;
-            border-top: 16px solid red;
+            border-top: 16px solid #BF2D23;
             border-radius: 50%;
             width: 120px;
             height: 120px;
@@ -30,9 +30,9 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 20px;
-            background: red;
-            animation: loading 2s infinite;
+            height: 10px;
+            background: #BF2D23;
+            animation: loading 1s infinite;
         }
 
         @keyframes loading {
@@ -42,6 +42,7 @@
     </style>
 </head>
 <body>
+    <div class="loading-bar"></div>
     <div class="spinner"></div>
     <div class="loading-bar"></div>
 </body>
