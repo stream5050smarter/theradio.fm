@@ -255,14 +255,14 @@
   
     <script>thoriumCorePlugin.appLoaded();</script>
     <script>
-	    $(document).ready(function(){
-		$('iframe-1041').attr('src', '/pages/radios.html');
-		$('iframe-1042').attr('src', '/pages/youtube.html');
-		$('iframe-1043').attr('src', '/pages/wall.html');
-		$('iframe-1044').attr('src', '/pages/blog.html');
-		$('iframe-1045').attr('src', '/pages/zapgpt.html');
-		$('iframe-1046').attr('src', '/pages/dash.html');
-	    });
+	document.addEventListener("DOMContentLoaded", () => {
+	  document.getElementById("iframe-1041").src = "/pages/radios.html";
+	  document.getElementById("iframe-1042").src = "/pages/youtube.html";
+	  document.getElementById("iframe-1043").src = "/pages/wall.html";
+	  document.getElementById("iframe-1044").src = "/pages/blog.html";
+	  document.getElementById("iframe-1045").src = "/pages/zapgpt.html";
+	  document.getElementById("iframe-1046").src = "/pages/dash.html";
+	});    
    </script>
   </body>
 </html>
