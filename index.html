@@ -240,22 +240,18 @@
     <script type="text/javascript" src="js/framework/framework7-bundle.min.js"></script>
     <script type="text/javascript" src="js/thorium.config.js"></script>
     <script type="text/javascript" src="js/plugins/thorium.core.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  
-   
+    <script>thoriumCorePlugin.appLoaded();</script>
     <script>
 	document.addEventListener("DOMContentLoaded", () => {
-		document.getElementById("iframe-1040").src = "/pages/cover.html";
+		document.getElementById("iframe-1040").src = "/pages/story/index.html";
 		document.getElementById("iframe-1042").src = "/pages/youtube.html";
-		document.getElementById("iframe-1044").src = "/pages/blog.html";
+		document.getElementById("iframe-1044").src = "https://resignerluthblog.framer.media";
 		document.getElementById("iframe-1043").src = "/pages/wall.html";
-		document.getElementById("iframe-1046").src = "/pages/dash.html";
+		document.getElementById("iframe-1046").src = "/pages/nav/index.html";
 		document.getElementById("iframe-1045").src = "/pages/zapgpt.html";
-		document.getElementById("iframe-1041").src = "/pages/radios.html";
+		document.getElementById("iframe-1041").src = "/pages/radio.html";
 	});
    </script>
 
-   <script>thoriumCorePlugin.appLoaded();</script>
-	
   </body>
 </html>
