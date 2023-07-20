@@ -212,14 +212,15 @@
       </div>
 
 	<script>
-	var tabLink = $('.tab');
-	if (tabLink.hasClass('tab-active'))
-	{ 
-	   document.getElementById("backbtn").style.display = "block";
-	}
-	} else {
-	   document.getElementById("backbtn").style.display = "none";
-	}
+		var tabLink = $('tab');
+		if (tabLink.hasClass('tab-active'))
+			{ if (tabLink.hasClass('back')) {
+			   document.getElementById("backbtn").style.display = "block";
+			}
+		}
+		} else {
+		   document.getElementById("backbtn").style.display = "none";
+		}
 	</script>
 	      
   </div></div></div>
