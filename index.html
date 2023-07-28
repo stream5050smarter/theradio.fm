@@ -117,7 +117,13 @@
           <div id="navbg-o-1005" class="navbar-bg"></div>
           <div id="navbar-inner-o-1006" class="navbar-inner">
               <div id="left-o-1007" class="left">
-		   <div id="backbtn" style="display:none">   
+		   <div id="playlist" style="display:none">   
+			   <a href="#" class="back link" onclick="document.getElementById('iframe-1041').src='pages/youtube.html'">
+			        <i class="icon f7-icons">arrow_clockwise</i>
+			        <span>Shuffle</span>
+		          </a>
+	          </div>
+		  <div id="backbtn" style="display:none">   
 			   <a href="#" class="back link" onclick="document.getElementById('iframe-1046').src='pages/nav/index.html'">
 			        <i class="icon f7-icons">arrow_clockwise</i>
 			        <span>Reset</span>
@@ -204,7 +210,6 @@
               </div>
           </div>
 	  <div id="tab-6" class="page-content tab back">	 
-	      <!--<button class="button button1" href="#" onclick="document.getElementById('iframe-1046').src='pages/dash.html'">Return</button>-->
               <div id="div-1046" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
                   <iframe title="tab-6" id="iframe-1046" src="/pages/loading.html" class="embed-responsive-item"></iframe>
               </div>
@@ -247,12 +252,12 @@
     <script>
 	document.addEventListener("DOMContentLoaded", () => {
 		document.getElementById("iframe-1040").src = "/pages/story/index.html";
+		document.getElementById("iframe-1041").src = "/pages/radios.html";
 		document.getElementById("iframe-1042").src = "/pages/youtube.html";
-		document.getElementById("iframe-1044").src = "https://resignerluthblog.framer.media";
-		document.getElementById("iframe-1043").src = "https://social-wall.theradio.workers.dev";
-		document.getElementById("iframe-1046").src = "/pages/nav/index.html";
+		document.getElementById("iframe-1043").src = "/pages/wall.html";
+		document.getElementById("iframe-1044").src = "/pages/blog.html";
 		document.getElementById("iframe-1045").src = "/pages/zapgpt.html";
-		document.getElementById("iframe-1041").src = "/pages/radio.html";	
+		document.getElementById("iframe-1046").src = "/pages/nav/index.html";
 	});
    </script>
 
