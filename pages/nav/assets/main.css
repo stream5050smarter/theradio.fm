@@ -412,11 +412,6 @@ h1.style1 span.p:nth-child(n + 2), h2.style1 span.p:nth-child(n + 2), h3.style1 
 	background-image: linear-gradient(45deg, #FF0000 0%, rgba(255,0,0,0.008) 100%);
 }
 
-#icons03 .n01 {
-	background-color: #FF0000;
-	background-image: linear-gradient(45deg, #FF0000 0%, rgba(255,0,0,0.008) 100%);
-}
-
 #icons05 .n01 {
 	background-color: #FF0000;
 	background-image: linear-gradient(45deg, #FF0000 0%, rgba(255,0,0,0.008) 100%);
@@ -886,18 +881,6 @@ h1.style1 span.p:nth-child(n + 2), h2.style1 span.p:nth-child(n + 2), h3.style1 
 	width: 100%;
 }
 
-#container04 > .wrapper > .inner > :nth-child(1) {
-	width: calc(75% + (var(--gutters) / 2));
-}
-
-#container04 > .wrapper > .inner > :nth-child(2) {
-	width: calc(25% + (var(--gutters) / 2));
-	--alignment: center;
-	--flex-alignment: center;
-	--indent-left: 1;
-	--indent-right: 1;
-}
-
 #container01 > .wrapper > .inner > :nth-child(1) {
 	width: calc(75% + (var(--gutters) / 2));
 }
@@ -915,18 +898,6 @@ h1.style1 span.p:nth-child(n + 2), h2.style1 span.p:nth-child(n + 2), h3.style1 
 }
 
 #container06 > .wrapper > .inner > :nth-child(2) {
-	width: calc(25% + (var(--gutters) / 2));
-	--alignment: center;
-	--flex-alignment: center;
-	--indent-left: 1;
-	--indent-right: 1;
-}
-
-#container03 > .wrapper > .inner > :nth-child(1) {
-	width: calc(75% + (var(--gutters) / 2));
-}
-
-#container03 > .wrapper > .inner > :nth-child(2) {
 	width: calc(25% + (var(--gutters) / 2));
 	--alignment: center;
 	--flex-alignment: center;
@@ -963,6 +934,18 @@ h1.style1 span.p:nth-child(n + 2), h2.style1 span.p:nth-child(n + 2), h3.style1 
 }
 
 #container07 > .wrapper > .inner > :nth-child(2) {
+	width: calc(25% + (var(--gutters) / 2));
+	--alignment: center;
+	--flex-alignment: center;
+	--indent-left: 1;
+	--indent-right: 1;
+}
+
+#container04 > .wrapper > .inner > :nth-child(1) {
+	width: calc(75% + (var(--gutters) / 2));
+}
+
+#container04 > .wrapper > .inner > :nth-child(2) {
 	width: calc(25% + (var(--gutters) / 2));
 	--alignment: center;
 	--flex-alignment: center;
@@ -1007,15 +990,6 @@ h1.style1 span.p:nth-child(n + 2), h2.style1 span.p:nth-child(n + 2), h3.style1 
 	
 	
 	
-	#container04 > .wrapper > .inner > :nth-child(2) {
-		--alignment: center;
-		--flex-alignment: center;
-		--indent-left: 1;
-		--indent-right: 1;
-	}
-	
-	
-	
 	#container01 > .wrapper > .inner > :nth-child(2) {
 		--alignment: center;
 		--flex-alignment: center;
@@ -1026,15 +1000,6 @@ h1.style1 span.p:nth-child(n + 2), h2.style1 span.p:nth-child(n + 2), h3.style1 
 	
 	
 	#container06 > .wrapper > .inner > :nth-child(2) {
-		--alignment: center;
-		--flex-alignment: center;
-		--indent-left: 1;
-		--indent-right: 1;
-	}
-	
-	
-	
-	#container03 > .wrapper > .inner > :nth-child(2) {
 		--alignment: center;
 		--flex-alignment: center;
 		--indent-left: 1;
@@ -1062,6 +1027,15 @@ h1.style1 span.p:nth-child(n + 2), h2.style1 span.p:nth-child(n + 2), h3.style1 
 	
 	
 	#container07 > .wrapper > .inner > :nth-child(2) {
+		--alignment: center;
+		--flex-alignment: center;
+		--indent-left: 1;
+		--indent-right: 1;
+	}
+	
+	
+	
+	#container04 > .wrapper > .inner > :nth-child(2) {
 		--alignment: center;
 		--flex-alignment: center;
 		--indent-left: 1;
