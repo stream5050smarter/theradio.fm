@@ -1417,7 +1417,7 @@
 		};
 	
 	// Initialize "On Visible" animations.
-		onvisible.add('#text01', { style: 'fade-in', speed: 2000, intensity: 5, delay: 0, state: true, replay: true });
+		onvisible.add('#text01', { style: 'fade-in', speed: 1000, intensity: 5, delay: 0, state: true, replay: true });
 		onvisible.add('#icons01', { style: 'zoom-in', speed: 1000, intensity: 5, delay: 0, state: true, replay: false });
 
 })();
