@@ -31,19 +31,19 @@
       <div id="navbar-o-1004" class="navbar">
           <div id="navbg-o-1005" class="navbar-bg"></div>
           <div id="navbar-inner-o-1006" class="navbar-inner">
-              <div id="left-o-1007" class="left">
-		   <div id="playlist" style="display:none">   
-			   <a href="#" class="back link" onclick="document.getElementById('iframe-1042').src='pages/youtube.html'">
-			        <i class="icon f7-icons">arrow_clockwise</i>
-			        <span>Shuffle</span>
-		          </a>
-	          </div>
-		  <div id="backbtn" style="display:none">   
-			   <a href="#" class="back link" onclick="document.getElementById('iframe-1046').src='pages/nav/index.html'">
-			        <i class="icon f7-icons">arrow_clockwise</i>
-			        <span>Reset</span>
-		          </a>
-	          </div>
+            <div id="left-o-1007" class="left">
+                <div id="playlist" style="display:none">   
+                <a href="#" class="back link" onclick="document.getElementById('iframe-1042').src='pages/youtube.html'">
+                     <i class="icon f7-icons">arrow_2_squarepath</i>
+                     <span>Playlist</span>
+                   </a>
+                </div>
+                <div id="backbtn" style="display:none">   
+                <a href="#" class="back link" onclick="document.getElementById('iframe-1046').src='pages/nav/index.html'">
+                     <i class="icon f7-icons">arrowshape_turn_up_left</i>
+                     <span>Back</span>
+                </a>
+            </div>
 	      </div>
               <div id="title-o-1008" class="title"></div>
               <div id="right-o-1009" class="right"></div>
@@ -74,13 +74,13 @@
                   <i id="o-1028" class="icon f7-icons ios-only"> bookmark </i>
                         <i id="o-1029" class="icon icon-fill f7-icons ios-only"> bookmark </i>
                         <i id="o-1030" class="icon f7-icons md-only"> bookmark </i>
-                       <span id="o-1031" class="tabbar-label">Blog</span>
+                       <span id="o-1031" class="tabbar-label">Visual</span>
               </a>
 	      <a id="o-1032" href="#tab-5" class="tab-link" onclick="document.getElementById('backbtn').style.display = 'none';document.getElementById('playlist').style.display = 'none';">
                   <i id="o-1033" class="icon f7-icons ios-only"> bubble_left_bubble_right </i>
                         <i id="o-1034" class="icon icon-fill f7-icons ios-only"> bubble_left_bubble_right </i>
                         <i id="o-1035" class="icon f7-icons md-only"> bubble_left_bubble_right </i>
-                       <span id="o-1036" class="tabbar-label">Feed</span>
+                       <span id="o-1036" class="tabbar-label">Social</span>
               </a>	  
 	      <a id="o-1037" href="#tab-6" class="tab-link" onclick="document.getElementById('backbtn').style.display = 'block';document.getElementById('playlist').style.display = 'none';">
                   <i id="o-1038" class="icon f7-icons ios-only"> music_note_list </i>
@@ -121,7 +121,7 @@
           </div>
           <div id="tab-5" class="page-content tab">
               <div id="div-1045" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="">
-                  <iframe title="tab-5" id="iframe-1045" src="" class="embed-responsive-item"></iframe>
+                  <iframe title="tab-5" id="iframe-1045" src="" scrolling="yes" class="embed-responsive-item"></iframe>
               </div>
           </div>
 	  <div id="tab-6" class="page-content tab back">	 
@@ -155,6 +155,25 @@
     </div>
     </div>
     </div>
-
+	
+    <script type="text/javascript" src="js/service-worker-register.js"></script>
+    <script type="text/javascript" src="js/framework/framework7-bundle.min.js"></script>
+    <script type="text/javascript" src="js/thorium.config.js"></script>
+    <script type="text/javascript" src="js/plugins/thorium.core.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("iframe-1040").src = "/pages/story.html";
+            document.getElementById("iframe-1041").src = "/pages/player.html";
+            document.getElementById("iframe-1042").src = "/pages/glass.html";
+            document.getElementById("iframe-1043").src = "/pages/loficafe.html";
+            document.getElementById("iframe-1044").src = "/pages/visual.html";
+            document.getElementById("iframe-1045").src = "/pages/wall.html";
+            document.getElementById("iframe-1046").src = "/pages/dash.html";
+        });
+    </script>
+    
+    <script>thoriumCorePlugin.appLoaded();</script>
+    
   </body>
 </html>
