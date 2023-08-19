@@ -1,0 +1,22 @@
+#embed-responsive-carousel-container { 
+    position:relative; 
+    width:100%; 
+    height:0;
+    overflow: hidden;
+    padding-bottom:56.25%; } 
+
+#embed-responsive-carousel-iframe { 
+    position:absolute;
+    display:block;  
+    overflow:hidden; 
+    top:0; 
+    left:0; 
+    bottom:0; 
+    right:0; 
+    width:100%; 
+    height:100%; 
+    border:none; 
+    margin:0; 
+    padding:0; 
+    z-index:999999;
+}
