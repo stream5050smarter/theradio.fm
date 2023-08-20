@@ -65,8 +65,7 @@
     "minimal-ui",
     "fullscreen",
     "browser",
-    "window-controls-overlay"
-  ],
+    "window-controls-overlay"],
   "categories": [
     "entertainment",
     "games",
