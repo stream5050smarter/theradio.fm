@@ -12,6 +12,8 @@
           "iframe[loading]"
         ]
       }
-    ]
+    ],
+    "no-inline-styles": "off",
+    "no-protocol-relative-urls": "off"
   }
 }
