@@ -1,87 +1,60 @@
-  const CACHE_NAME = 'cool-cache';
+importScripts(
+  'https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js'
+);
 
-  // Add whichever assets you want to pre-cache here:
-  const PRECACHE_ASSETS = [
-      '/pages/cover/',
-      '/pages/css/',
-      '/pages/js/',
-      '/pages/nav/',
-      '/pages/privacy/',
-      '/pages/response/',
-      '/pages/road/',
-      '/pages/av.html',
-      '/pages/blank.html',
-      '/pages/blog.html',
-      '/pages/dash.html',
-      '/pages/dopemusic.html',
-      '/pages/ko-fi.html',
-      '/pages/loading.html',
-      '/pages/loficafe.html',
-      '/pages/lofifm.html',
-      '/pages/lofigen.html',
-      '/pages/nav.html',
-      '/pages/player.html',
-      '/pages/privacy.html',
-      '/pages/radio.html',
-      '/pages/radios.html',
-      '/pages/social.html',
-      '/pages/story.html',
-      '/pages/visual.html',
-      '/pages/wall.html',
-      '/pages/youtube.html',
-      '/pages/zapgpt.html',
-      '/css/classes.css',
-      '/css/custom.css',
-      '/css/framework7-bundle.min.css',
-      '/css/framework7-keypad.min.css',
-      '/css/pages/index.css',
-      '/css/thorium.min.css',
-      '/index.html',
-      '/js/custom.js',
-      '/js/framework/framework7-bundle.min.js',
-      '/js/plugins/thorium.core.min.js',
-      '/js/service-worker-register.js',
-      '/js/thorium.config.js',
-      '/offline.html',
-      '/pages/cover/assets/main.css',
-      '/pages/cover/assets/main.js',
-      '/pages/cover/index.html',
-      '/pages/css/flashblock.css',
-      '/pages/css/gear.css',
-      '/pages/css/gear.min.css',
-      '/pages/css/icons.css',
-      '/pages/css/styles.css',
-      '/pages/css/styles.min.css'    
-  ]
-  
-  // Listener for the install event - pre-caches our assets list on service worker install.
-  self.addEventListener('install', event => {
-      event.waitUntil((async () => {
-          const cache = await caches.open(CACHE_NAME);
-          cache.addAll(PRECACHE_ASSETS);
-      })());
-  });
-  
-  self.addEventListener('activate', event => {
-    event.waitUntil(self.clients.claim());
-  });
+// This is your Service Worker, you can put any of your custom Service Worker
+// code in this file, above the `precacheAndRoute` line.
 
-  self.addEventListener('fetch', event => {
-    event.respondWith(async () => {
-        const cache = await caches.open(CACHE_NAME);
-  
-        // match the request to our cache
-        const cachedResponse = await cache.match(event.request);
-  
-        // check if we got a valid response
-        if (cachedResponse !== undefined) {
-            // Cache hit, return the resource
-            return cachedResponse;
-        } else {
-          // Otherwise, go to the network
-            return fetch(event.request)
-        };
-    });
-  });
-  
-  
+// When widget is installed/pinned, push initial state.
+self.addEventListener('widgetinstall', (event) => {
+  event.waitUntil(updateWidget(event));
+});
+
+// When widget is shown, update content to ensure it is up-to-date.
+self.addEventListener('widgetresume', (event) => {
+  event.waitUntil(updateWidget(event));
+});
+
+// When the user clicks an element with an associated Action.Execute,
+// handle according to the 'verb' in event.action.
+self.addEventListener('widgetclick', (event) => {
+if (event.action == "updateName") {
+  event.waitUntil(updateName(event));
+}
+});
+
+// When the widget is uninstalled/unpinned, clean up any unnecessary
+// periodic sync or widget-related state.
+self.addEventListener('widgetuninstall', (event) => {});
+
+const updateWidget = async (event) => {
+// The widget definition represents the fields specified in the manifest.
+  const widgetDefinition = event.widget.definition;
+
+  // Fetch the template and data defined in the manifest to generate the payload.
+  const payload = {
+      template: JSON.stringify(await (await fetch(widgetDefinition.msAcTemplate)).json()),
+      data: JSON.stringify(await (await fetch(widgetDefinition.data)).json()),
+  };
+
+  // Push payload to widget.
+  await self.widgets.updateByInstanceId(event.instanceId, payload);
+}
+
+const updateName = async (event) => {
+  const name = event.data.json().name;
+
+  // The widget definition represents the fields specified in the manifest.
+  const widgetDefinition = event.widget.definition;
+
+  // Fetch the template and data defined in the manifest to generate the payload.
+  const payload = {
+      template: JSON.stringify(await (await fetch(widgetDefinition.msAcTemplate)).json()),
+      data: JSON.stringify({name}),
+  };
+
+  // Push payload to widget.
+  await self.widgets.updateByInstanceId(event.instanceId, payload);
+}
+
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST || []);
