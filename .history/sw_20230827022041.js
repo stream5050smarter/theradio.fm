@@ -19,24 +19,15 @@ const ASSETS_TO_CACHE = [
   '/css/framework7-keypad.min.css',
   '/css/thorium.min.css',
   '/js/',
-  '/js/thorium.config.js',
   '/js/framework/',
   '/js/framework/framework7-bundle.min.js',
   '/js/framework/framework7-keypad.min.js.map',
   '/js/plugins/',
-  '/js/plugins/thorium.core.min.js',
-  '/pages/',
-  '/pages/cover/',
-  '/pages/cover/index.html',
-  '/pages/cover/assets/',
-  '/pages/cover/assets/icons.svg',
-  '/pages/cover/assets/main.css',
-  '/pages/cover/assets/main.js',
-  '/pages/cover/assets/images/',
-  '/pages/cover/assets/images/image01.jpg',
-  '/pages/cover/assets/images/share.jpg',
-  '/img/46603.png',
-  '/version.json'
+  '/js/plugins/',
+  '/script.js',
+  '/images/icon.png',
+  '/version.json',
+  // ... other assets ...
 ];
 
 // Installing the service worker
