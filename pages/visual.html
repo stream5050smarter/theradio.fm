@@ -15,7 +15,10 @@
 
 	@media screen and (max-width : 1920px){
   		.mobile{
-  		display:none !important;
+  			display:none !important;
+  		}
+		.desk{
+			display:block !important;
   		}
 		html, body, iframe {
 		    top: 0;
@@ -33,6 +36,9 @@
   		.mobile{
 			display:none !important;
   		}
+		.desk{
+			display:block !important;
+  		}
 		html, body, iframe {
 		    top: 0;
 		    left: 0;
@@ -48,6 +54,9 @@
     @media screen and (max-width : 1024px){
   		.mobile{
 			display:none !important;
+  		}
+		.desk{
+			display:block !important;
   		}
 		html, body, iframe {
 		    top: 0;
@@ -65,6 +74,9 @@
 		.desk{
 			display:none !important;
 		}
+		.mobile{
+			display:block !important;
+  		}
 		html, body, iframe {
 		    top: 0;
 		    left: 0;
@@ -82,17 +94,16 @@
                     display: block;
                     width: 100%;
                     border: none;
-                    }
-	
- 	
-	.mobile{
-		display:block !important;
-  		}	
+                    }	
 	    
     </style>	
 </head>
 <body>
-    <div class="mobile"><iframe title="flexi-flux" src="https://widget-3409afc8aff049eaafa35947a60e6eb6.elfsig.ht" loading="eager" frameborder="0" allowfullscreen></iframe></div>
-    <div class="desk"><iframe title="flexi-flux" src="https://widget-3a0c761daad64b92b038fece17d11111.elfsig.ht" loading="eager" frameborder="0" allowfullscreen></iframe></div>
+    <div class="mobile">
+		<iframe title="flexi-flux" src="https://widget-3409afc8aff049eaafa35947a60e6eb6.elfsig.ht" loading="eager" frameborder="0" allowfullscreen></iframe>
+	</div>
+    <div class="desk">
+		<iframe title="flexi-flux" src="https://widget-3a0c761daad64b92b038fece17d11111.elfsig.ht" loading="eager" frameborder="0" allowfullscreen></iframe>
+	</div>
 </body>
 </html>
