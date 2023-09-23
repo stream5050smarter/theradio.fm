@@ -20,25 +20,23 @@
   		.div-only-mobile{
   		visibility:hidden;
   		}
+		html, body, iframe {
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+                    margin: 0px;
+                    padding: 2%;
+                    height: 90%;
+                    z-index: 999999;
+                    }
 	}
 	    
 	@media screen and (max-width : 906px){
 		.desk{
 		visibility:hidden;
 		}
-	    
-        html, body, iframe, .desk  {
-		    top: 0;
-		    left: 0;
-		    bottom: 0;
-		    right: 0;
-                    margin: 2px;
-                    padding: 0px;
-                    height: 90%;
-                    z-index: 999999;
-                    }
-
-	html, body, iframe, .div-only-mobile {
+		html, body, iframe {
 		    top: 0;
 		    left: 0;
 		    bottom: 0;
@@ -48,15 +46,17 @@
                     height: 1000vh;
                     z-index: 999999;
                     }
-	
-        iframe {
+	}
+	    
+	iframe {
                     overflow: hidden;
                     display: block;
                     width: 100%;
                     border: none;
                     }
 	
- 	.div-only-mobile{
+ 	
+	.div-only-mobile{
   		visibility:visible;
   		}
 	}
