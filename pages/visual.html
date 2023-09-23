@@ -14,7 +14,7 @@
     <style>
 
 	@media screen and (max-width : 1920px){
-  		.div-only-mobile{
+  		.mobile{
   		visibility:hidden;
   		}
 		html, body, iframe {
@@ -25,6 +25,38 @@
                     margin: 0px;
                     padding: 2%;
                     height: 90%;
+                    z-index: 999999;
+                    }
+	}
+
+    @media screen and (max-width : 1400px){
+  		.mobile{
+  		visibility:hidden;
+  		}
+		html, body, iframe {
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+                    margin: 0px;
+                    padding: 1%;
+                    height: 94%;
+                    z-index: 999999;
+                    }
+	}
+
+    @media screen and (max-width : 1024px){
+  		.mobile{
+  		visibility:hidden;
+  		}
+		html, body, iframe {
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+                    margin: 0px;
+                    padding: 0px;
+                    height: 100%;
                     z-index: 999999;
                     }
 	}
@@ -53,17 +85,14 @@
                     }
 	
  	
-	.div-only-mobile{
+	.mobile{
   		visibility:visible;
-  		}
-	
+  		}	
 	    
-    </style>
-	
+    </style>	
 </head>
 <body>
-	
-    <iframe title="flexi-flux" src="https://widget-3409afc8aff049eaafa35947a60e6eb6.elfsig.ht" loading="eager" frameborder="0" allowfullscreen></iframe>
-	
+    <iframe title="flexi-flux" class="mobile" src="https://widget-3409afc8aff049eaafa35947a60e6eb6.elfsig.ht" loading="eager" frameborder="0" allowfullscreen></iframe>
+    <iframe title="flexi-flux" class="desk" src="https://widget-3a0c761daad64b92b038fece17d11111.elfsig.ht" loading="eager" frameborder="0" allowfullscreen></iframe>
 </body>
 </html>
