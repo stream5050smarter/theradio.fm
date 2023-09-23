@@ -58,7 +58,22 @@
                     }
 		}
 	    
-	@media screen and (max-width : 906px){
+	@media screen and (max-width : 768px){
+  		.mobile{
+			display:none !important;
+  		}
+		.desk{
+			display:block !important;
+  		}
+		html, body, iframe {
+                    margin: 0px;
+                    padding: 0px;
+                    height: 80vh;
+                    z-index: 999999;
+                    }
+		}
+
+	@media screen and (max-width : 390px){
 		.desk{
 			display:none !important;
 		}
