@@ -14,32 +14,62 @@
     <!--display:block;  overflow:hidden; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; z-index:999999;-->
 
     <style>
-        html, body, iframe {
-                    margin: 0px;
-                    padding: 0px;
-                    height: 90vh;
-                    z-index: 999999;
-                    }
-        iframe {
+
+	
+	@media screen and (max-width : 1920px){
+  		.div-only-mobile{
+  		visibility:hidden;
+  		}
+	}
+	    
+	@media screen and (max-width : 906px){
+		.desk{
+		visibility:hidden;
+		}
+	    
+        html, body, iframe .desk {
 		    top: 0;
 		    left: 0;
 		    bottom: 0;
 		    right: 0;
+                    margin: 2px;
+                    padding: 0px;
+                    height: 90%;
+                    z-index: 999999;
+                    }
+
+	html, body, iframe .div-only-mobile {
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+                    margin: 0px;
+                    padding: 0px;
+                    height: 1000vh;
+                    z-index: 999999;
+                    }
+	
+        iframe {
                     overflow: hidden;
                     display: block;
                     width: 100%;
                     border: none;
                     }
-	div {
-		height: 10vh;
+	
+ 	.div-only-mobile{
+  		visibility:visible;
+  		}
 	}
+	    
     </style>
 	
 </head>
 <body>
+	
 	<!--<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 	<div class="elfsight-app-3409afc8-aff0-49ea-afa3-5947a60e6eb6"></div>-->
-	<div class"spacer"></div>
+	
     	<iframe title="flexi-flux" src="https://widget-3409afc8aff049eaafa35947a60e6eb6.elfsig.ht" loading="eager" frameborder="0" allowfullscreen></iframe>
+	
 </body>
 </html>
