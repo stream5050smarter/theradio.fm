@@ -13,24 +13,9 @@
     
     <style>
 
-	@media screen and (max-width : 1920px){
+	@media screen and (max-width : 1920px) and (orientation : landscape){
   		.mobile{
   			display:none !important;
-  		}
-		.desk{
-			display:block !important;
-  		}
-		html, body, iframe {
-                    margin: 0px;
-                    padding: 1%;
-                    height: 80vh;
-                    z-index: 999999;
-                    }
-	}
-
-    @media screen and (max-width : 1400px){
-  		.mobile{
-			display:none !important;
   		}
 		.desk{
 			display:block !important;
@@ -41,9 +26,9 @@
                     height: 80vh;
                     z-index: 999999;
                     }
-		}
+	}
 
-    @media screen and (max-width : 1024px){
+    @media screen and (max-width : 1400px) and (orientation : landscape){
   		.mobile{
 			display:none !important;
   		}
@@ -57,8 +42,23 @@
                     z-index: 999999;
                     }
 		}
+
+    @media screen and (max-width : 1024px) and (orientation : portrait){
+  		.mobile{
+			display:none !important;
+  		}
+		.desk{
+			display:block !important;
+  		}
+		html, body, iframe {
+                    margin: 0px;
+                    padding: 2%;
+                    height: 80vh;
+                    z-index: 999999;
+                    }
+		}
 	    
-	@media screen and (max-width : 768px){
+	@media screen and (max-width : 768px) and (orientation : landscape){
   		.mobile{
 			display:none !important;
   		}
@@ -73,7 +73,22 @@
                     }
 		}
 
-	@media screen and (max-width : 640px){
+	@media screen and (max-width : 400px) and (orientation : portrait){
+		.desk{
+			display:none !important;
+		}
+		.mobile{
+			display:block !important;
+  		}
+		html, body, iframe {
+                    margin: 0px;
+                    padding: 0px;
+                    height: 100vh;
+                    z-index: 999999;
+                    }
+		}
+
+	@media screen and (max-width : 400px) and (orientation : landscape){
 		.desk{
 			display:none !important;
 		}
