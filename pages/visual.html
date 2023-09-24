@@ -73,13 +73,13 @@
                     }
 		}
 
-	@media screen and (max-width : 400px){
-		.desk{
+	@media screen and (max-width : 390px) and (orientation : portrait){
+  		.mobile{
 			display:block !important;
-		}
-		.mobile{
-			display:none !important;
   		}
+		.desk{
+			display:none !important;
+		}
 		html, body, iframe {
                     margin: 0px;
                     padding: 0px;
@@ -87,6 +87,23 @@
                     z-index: 999999;
                     }
 		}
+
+		@media screen and (max-width : 390px) and (orientation : landscape){
+  		.mobile{
+			display:block !important;
+  		}
+		.desk{
+			display:none !important;
+		}
+		html, body, iframe {
+                    margin: 0px;
+                    padding: 0px;
+                    height: 100lvh;
+                    z-index: 999999;
+                    }
+		}
+
+
 
 		iframe {
                     overflow: hidden;
