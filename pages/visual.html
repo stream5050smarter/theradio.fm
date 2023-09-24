@@ -61,7 +61,37 @@
                     }
 	}
 
+	@media screen and (max-width : 1920px) and (orientation : portrait){
+		.mobile{
+  			display:none !important;
+  		}
+		.desk{
+			display:block !important;
+  		}
+		html, body, iframe {
+                    margin: 0px;
+                    padding: 0px;
+                    height: 80vh;
+                    z-index: 999999;
+                    }
+	}	
+		
     @media screen and (max-width : 1400px) and (orientation : landscape){
+  		.mobile{
+			display:none !important;
+  		}
+		.desk{
+			display:block !important;
+  		}
+		html, body, iframe {
+                    margin: 0px;
+                    padding: 0px;
+                    height: 80vh;
+                    z-index: 999999;
+                    }
+		}
+
+	@media screen and (max-width : 1400px) and (orientation : portrait){
   		.mobile{
 			display:none !important;
   		}
@@ -90,10 +120,23 @@
                     z-index: 999999;
                     }
 		}
+		
+	@media screen and (max-width : 1024px) and (orientation : portrait){
+  		.mobile{
+			display:none !important;
+  		}
+		.desk{
+			display:block !important;
+  		}
+		html, body, iframe {
+					margin: 0px;
+					padding: 0px;
+					height: 80vh;
+					z-index: 999999;
+					}
+		}
 
-
-
-	@media screen and (max-width : 778px) and (orientation : landscape){
+	@media screen and (max-width : 768px) and (orientation : landscape){
   		.mobile{
 			display:none !important;
   		}
@@ -101,14 +144,30 @@
 			display:block !important;
 		}
 		html, body, iframe {
-                    margin: 0px;
-                    padding: 0px;
-                    height: 80vh;
-                    z-index: 999999;
-                    }
+					margin: 0px;
+					padding: 0px;
+					height: 80vh;
+					z-index: 999999;
+					}
 		}
 
-    @media screen and (max-width : 390px) and (orientation : portrait){
+
+	@media screen and (max-width : 768px) and (orientation : portrait){
+  		.mobile{
+			display:none !important;
+  		}
+		.desk{
+			display:block !important;
+		}
+		html, body, iframe {
+					margin: 0px;
+					padding: 0px;
+					height: 80vh;
+					z-index: 999999;
+					}
+		}
+		
+    @media screen and (max-width : 390px) and (orientation : landscape){
   		.mobile{
 			display:block !important;
   		}
@@ -123,7 +182,7 @@
                     }
 		}
 
-		@media screen and (max-width : 390px) and (orientation : landscape){
+		@media screen and (max-width : 390px) and (orientation : portrait){
   		.mobile{
 			display:block !important;
   		}
