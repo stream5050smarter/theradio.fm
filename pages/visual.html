@@ -43,7 +43,7 @@
                     }
 		}
 
-    @media screen and (max-width : 1024px) and (orientation : portrait){
+    @media screen and (max-width : 1024px) and (orientation : landscape){
   		.mobile{
 			display:none !important;
   		}
@@ -58,7 +58,7 @@
                     }
 		}
 	    
-	@media screen and (max-width : 778px) and (orientation : landscape){
+	@media screen and (max-width : 778px) and (orientation : portrait){
   		.mobile{
 			display:block !important;
   		}
@@ -73,7 +73,7 @@
                     }
 		}
 
-	@media screen and (max-width : 390px) and (orientation : portrait){
+	@media screen and (max-width : 778px) and (orientation : landscape){
   		.mobile{
 			display:block !important;
   		}
@@ -83,7 +83,22 @@
 		html, body, iframe {
                     margin: 0px;
                     padding: 0px;
-                    height: 100vh;
+                    height: 100lvh;
+                    z-index: 999999;
+                    }
+		}
+
+    @media screen and (max-width : 390px) and (orientation : portrait){
+  		.mobile{
+			display:block !important;
+  		}
+		.desk{
+			display:none !important;
+		}
+		html, body, iframe {
+                    margin: 0px;
+                    padding: 0px;
+                    height: 100lvh;
                     z-index: 999999;
                     }
 		}
@@ -102,8 +117,6 @@
                     z-index: 999999;
                     }
 		}
-
-
 
 		iframe {
                     overflow: hidden;
