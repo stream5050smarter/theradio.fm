@@ -44,7 +44,7 @@
 
   <!--<iframe title="YouTube video player" id="playlistiframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
 
-  <iframe title="flexi-flux" src="https://www.youtube-nocookie.com/embed/?v=Tx1sqYc3qas&list=RDTx1sqYc3qas" allow="web-share; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" type="text/html" frameborder="0" allowfullscreen></iframe>
+  <iframe title="YouTube Video Player" id="playlistiframe" src="" allow="web-share; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" type="text/html" frameborder="0" allowfullscreen></iframe>
   
   <script>
     // Array of prepopulated strings (YouTube playlist IDs)
@@ -88,6 +88,7 @@
         // https://www.youtube-nocookie.com/embed?v=jfioZtZ9iiE&list=RDjfioZtZ9iiE
         // document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + nextPlaylist;
         // document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/" + nextPlaylist;
+        // https://www.youtube-nocookie.com/embed/?v=Tx1sqYc3qas&list=RDTx1sqYc3qas
           document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/?v=" + nextPlaylist;
       } else {
         // If the cookie doesn't exist or its value is not in the array, generate a random playlist as before
