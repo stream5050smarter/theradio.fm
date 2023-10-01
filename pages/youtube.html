@@ -80,8 +80,9 @@
         // Save the next playlist ID as the cookie
         document.cookie = "playlistID=" + nextPlaylist + "; path=/";
 
-        // Update the src attribute of the iframe to the next playlist
-        document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + nextPlaylist;
+        // Update the src attribute of the iframe to the next playlist https://www.youtube.com/embed/ZtD9bQIjE_k?si=iq6YzJ9GtYH3_I5r
+        // document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + nextPlaylist;
+          document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/" + nextPlaylist;
       } else {
         // If the cookie doesn't exist or its value is not in the array, generate a random playlist as before
         generateRandomPlaylist();
