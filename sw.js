@@ -1,101 +1,47 @@
-const BASE_CACHE_NAME = 'pwa-cache-';
-let CURRENT_VERSION = "";
+// This is the "Offline page" service worker
 
-// Fetch the version from version.json and set it to the CACHE_NAME
-fetch('/version.json')
-  .then(response => response.json())
-  .then(data => {
-    CURRENT_VERSION = data.version;
-  });
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-// List of assets to cache
-const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/offline.html',  // For offline fallback
-  '/css/',
-  '/css/classes.css',
-  '/css/framework7-bundle.min.css',
-  '/css/framework7-keypad.min.css',
-  '/css/thorium.min.css',
-  '/js/',
-  '/js/thorium.config.js',
-  '/js/framework/',
-  '/js/framework/framework7-bundle.min.js',
-  '/js/framework/framework7-keypad.min.js.map',
-  '/js/plugins/',
-  '/js/plugins/thorium.core.min.js',
-  '/pages/',
-  '/pages/cover/',
-  '/pages/cover/index.html',
-  '/pages/cover/assets/',
-  '/pages/cover/assets/icons.svg',
-  '/pages/cover/assets/main.css',
-  '/pages/cover/assets/main.js',
-  '/pages/cover/assets/images/',
-  '/pages/cover/assets/images/image01.jpg',
-  '/pages/cover/assets/images/share.jpg',
-  '/img/46603.png',
-  '/version.json'
-];
+const CACHE = "pwabuilder-page";
 
-// Installing the service worker
-self.addEventListener('install', event => {
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
+const offlineFallbackPage = "offline.html";
+
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
+
+self.addEventListener('install', async (event) => {
   event.waitUntil(
-    caches.open(BASE_CACHE_NAME + CURRENT_VERSION)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(ASSETS_TO_CACHE);
-      })
+    caches.open(CACHE)
+      .then((cache) => cache.add(offlineFallbackPage))
   );
 });
 
-// Fetching from the cache or network
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Cache hit, return the cached response
-        if (response) {
-          return response;
+if (workbox.navigationPreload.isSupported()) {
+  workbox.navigationPreload.enable();
+}
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () => {
+      try {
+        const preloadResp = await event.preloadResponse;
+
+        if (preloadResp) {
+          return preloadResp;
         }
-        // Try fetching from the network
-        return fetch(event.request)
-          .then(response => {
-            // Check if we received a valid response
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-            // Cache the fetched resource
-            var responseToCache = response.clone();
-            caches.open(BASE_CACHE_NAME + CURRENT_VERSION)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-              });
-            return response;
-          })
-          .catch(error => {
-            // If the fetch fails (e.g., no network), return the offline.html page
-            return caches.match('/offline.html')
-              .then(response => response || new Response('<h1>Offline</h1><p>You are currently offline.</p>', {
-                headers: { 'Content-Type': 'text/html' }
-              }));
-          });
-      })
-  );
-});
 
-// Cleaning up old caches based on the version
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName.startsWith(BASE_CACHE_NAME) && cacheName !== BASE_CACHE_NAME + CURRENT_VERSION) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
+        const networkResp = await fetch(event.request);
+        return networkResp;
+      } catch (error) {
+
+        const cache = await caches.open(CACHE);
+        const cachedResp = await cache.match(offlineFallbackPage);
+        return cachedResp;
+      }
+    })());
+  }
 });

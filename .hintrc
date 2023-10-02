@@ -9,7 +9,8 @@
         "ignore": [
           "iframe[allow]",
           "iframe[allowpaymentrequest]",
-          "iframe[loading]"
+          "iframe[loading]",
+          "meta[name=theme-color]"
         ]
       }
     ],
