@@ -224,7 +224,38 @@
           </div>
           <div id="tab-1" class="page-content tab tab-active">
             <div id="div-1041" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
-              <iframe title="tab-1" id="iframe-1041" src="pages/cover/index.html" loading="eager"
+
+              <iframe id="visibleIframe" title="tab-0" src="pages/cover/index.html" class="embed-responsive-item" style="display: block; "></iframe>
+              <iframe id="hiddenIframe" title="tab-1" src="pages/player.html" loading="lazy" class="embed-responsive-item" style="display: none; "></iframe>
+          
+              <script>
+                  // Function to preload content in the hidden iframe
+                  /*function preloadHiddenIframe() {
+                      const hiddenIframe = document.getElementById('hiddenIframe');
+                      hiddenIframe.src = 'pages/player.html';
+                      hiddenIframe.style.display = 'none';
+                  }*/
+              
+                  // Function to switch to the hidden iframe and hide the visible one
+                  function switchToHiddenIframe() {
+                      const visibleIframe = document.getElementById('visibleIframe');
+                      const hiddenIframe = document.getElementById('hiddenIframe');
+              
+                      // Hide the visible iframe
+                      visibleIframe.style.display = 'none';
+              
+                      // Show the hidden iframe
+                      hiddenIframe.style.display = 'block';
+                  }
+              
+                  // Preload the content in the hidden iframe
+                  //preloadHiddenIframe();
+              
+                  // Switch to the hidden iframe after 5 seconds
+                  setTimeout(switchToHiddenIframe, 7500);
+              </script>
+
+              <!--<iframe title="tab-1" id="iframe-1041" src="pages/cover/index.html" loading="eager"
                 class="embed-responsive-item"></iframe>
               <script>
                 const iframe = document.getElementById('iframe-1041');
@@ -237,7 +268,7 @@
                 } else if (splash) {
                   iframe.src = "pages/player.html";
                 };
-              </script>
+              </script>-->
             </div>
           </div>
           <div id="tab-2" class="page-content tab">
