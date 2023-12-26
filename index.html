@@ -352,7 +352,7 @@
           </div>
 
           <div id="tabs-o-2010" class="tabs">
-            <div id="tab-0" class="page-content tab tab-active">
+            <div id="tab-0" class="page-content tab">
               <div
                 id="div-1040"
                 class="embedweb embed-responsive w-100 embed-responsive-cover"
@@ -367,7 +367,7 @@
                 ></iframe>
               </div>
             </div>
-            <div id="tab-1" class="page-content tab">
+            <div id="tab-1" class="page-content tab tab-active">
               <div
                 id="div-1041"
                 class="embedweb embed-responsive w-100 embed-responsive-cover"
@@ -376,10 +376,29 @@
                 <iframe
                   title="tab-1"
                   id="iframe-1041"
-                  src="pages/player.html"
+                  src="pages/cover/index.html"
                   loading="eager"
                   class="embed-responsive-item"
                 ></iframe>
+                <script>
+                  const iframe = document.getElementById('iframe-1041');
+                  let splash = 0;
+          
+                  /*iframe.onload = function() {
+                      // This code will run when the iframe's content has finished loading.
+                      console.log('IFrame content has loaded.');
+                  };*/
+          
+                  // Change the src attribute of the iframe after some time
+                  if (!splash){
+                  setTimeout(function() {
+                      splash = 1
+                      iframe.src = "pages/player.html";
+                  }, 5000);
+                  }else{
+                      iframe.src = "pages/player.html";
+                  };
+              </script>
               </div>
             </div>
             <div id="tab-2" class="page-content tab">
