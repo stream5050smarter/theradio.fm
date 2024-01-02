@@ -1,4 +1,36 @@
 {
+  "name": "theradio.fm",
+  "version": "1.1.13",
+  "description": "theradio.fm",
+  "main": "sw.js",
+  "scripts": {
+    "test": "nvm current"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bright-spark/theradio.fm.git"
+  },
+  "keywords": [
+    "theradio.fm",
+    "pwa",
+    "radio",
+    "youtube",
+    "html",
+    "games",
+    "chatgpt",
+    "chat",
+    "social",
+    "wall",
+    "visual",
+    "stream",
+    "lofi"
+  ],
+  "author": "Martin Myburgh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bright-spark/theradio.fm/issues"
+  },
+  "homepage": "https://github.com/bright-spark/theradio.fm#readme",
   "dependencies": {
     "@vercel/speed-insights": "^1.0.2"
   }
