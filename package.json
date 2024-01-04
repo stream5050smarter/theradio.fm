@@ -2,7 +2,7 @@
   "name": "theradio.fm",
   "version": "1.1.13",
   "description": "theradio.fm",
-  "main": "sw.js",
+  "main": "sw-pwabuilder.js",
   "scripts": {
     "test": "nvm current"
   },
