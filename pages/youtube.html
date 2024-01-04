@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-    <!-- BEGIN Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZWWSYRHSF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-PZWWSYRHSF');
-    </script>
-    <!-- END Google tag (gtag.js) -->
-    
+  <!-- BEGIN Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZWWSYRHSF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-PZWWSYRHSF');
+  </script>
+  <!-- END Google tag (gtag.js) -->
+
   <title>YouTube</title>
   <meta charset="utf-8">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="ho·ly | myo͞ozik">
+  <meta name="apple-mobile-web-app-title" content="theradio.fm youtube">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0">
   <style>
-    html, body, iframe {
+    html,
+    body,
+    iframe {
       margin: 0;
       padding: 0;
       top: 0;
@@ -39,12 +42,15 @@
     }
   </style>
 </head>
+
 <body>
 
   <!--<iframe title="YouTube video player" id="playlistiframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
 
-  <iframe title="YouTube Video Player" id="playlistiframe" src="" allow="web-share; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" type="text/html" frameborder="0" allowfullscreen></iframe>
-  
+  <iframe title="YouTube Video Player" id="playlistiframe" src=""
+    allow="web-share; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    type="text/html" frameborder="0" allowfullscreen></iframe>
+
   <script>
     // Array of prepopulated strings (YouTube playlist IDs)
     var strings = [
@@ -55,17 +61,17 @@
       //"PLuWIxgNYqm0lXxPLZ9hBT9M46m53H5GES",
       //"PLuWIxgNYqm0kV69z-SJHDwAuebGmIhbp6"
 
-        "Tx1sqYc3qas&list=RDTx1sqYc3qas&start_radio=1",
-        "Ah0Ys50CqO8&list=RDQMF2R40qRK-qk&start_radio=1",
-        "LjF9IqvXDjY&list=RDLjF9IqvXDjY&start_radio=1",
-        "N44lUwwvNFs&list=RDN44lUwwvNFs&start_radio=1",
-        "jfioZtZ9iiE&list=RDjfioZtZ9iiE&start_radio=1",
-        "RO_9LDW4YhM&list=RDRO_9LDW4YhM&start_radio=1",
-        "ZtD9bQIjE_k&list=RDZtD9bQIjE_k&start_radio=1",
-        "mj4cD5xn2n0&list=RD1e_j20yFAvo&start_radio=1",
-        "BC19kwABFwc&list=RD4RkM-v2i5Ew&start_radio=1",
-        "4RkM-v2i5Ew&list=RDBC19kwABFwc&start_radio=1",
-        "kEDZZin4_eM&list=RD1e_j20yFAvo&start_radio=1"
+      "Tx1sqYc3qas&list=RDTx1sqYc3qas&start_radio=1",
+      "Ah0Ys50CqO8&list=RDQMF2R40qRK-qk&start_radio=1",
+      "LjF9IqvXDjY&list=RDLjF9IqvXDjY&start_radio=1",
+      "N44lUwwvNFs&list=RDN44lUwwvNFs&start_radio=1",
+      "jfioZtZ9iiE&list=RDjfioZtZ9iiE&start_radio=1",
+      "RO_9LDW4YhM&list=RDRO_9LDW4YhM&start_radio=1",
+      "ZtD9bQIjE_k&list=RDZtD9bQIjE_k&start_radio=1",
+      "mj4cD5xn2n0&list=RD1e_j20yFAvo&start_radio=1",
+      "BC19kwABFwc&list=RD4RkM-v2i5Ew&start_radio=1",
+      "4RkM-v2i5Ew&list=RDBC19kwABFwc&start_radio=1",
+      "kEDZZin4_eM&list=RD1e_j20yFAvo&start_radio=1"
 
     ];
 
@@ -93,7 +99,7 @@
         // document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/" + nextPlaylist;
         // https://www.youtube-nocookie.com/embed/?v=Tx1sqYc3qas&list=RDTx1sqYc3qas
         // https://www.youtube.com/watch?v=mj4cD5xn2n0&list=RD1e_j20yFAvo&start_radio=1  
-          document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/?v=" + nextPlaylist;
+        document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/?v=" + nextPlaylist;
       } else {
         // If the cookie doesn't exist or its value is not in the array, generate a random playlist as before
         generateRandomPlaylist();
@@ -119,4 +125,5 @@
     window.addEventListener("load", setNextPlaylistID);
   </script>
 </body>
+
 </html>
