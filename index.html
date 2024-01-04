@@ -14,9 +14,17 @@
     gtag("config", "G-PZWWSYRHSF");
   </script>
   <!-- END Google tag (gtag.js) -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content=“theradio.fm”>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="320">
   <!-- Vercel tag -->
   <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
   <!-- Vercel tag end -->
@@ -229,40 +237,42 @@
             </div>
           </div>-->
 
-          <div id="tab-1" class="page-content tab tab-active">
-            <div id="div-1041" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+        <div id="tab-1" class="page-content tab tab-active">
+          <div id="div-1041" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
 
-              <iframe id="visibleIframe" title="tab-0" src="pages/cover/index.html" class="embed-responsive-item" style="display: block; "></iframe>
-              <iframe id="hiddenIframe" title="tab-1" src="pages/player.html" loading="lazy" class="embed-responsive-item" style="display: none; "></iframe>
-          
-              <script>
-                  // Function to preload content in the hidden iframe
-                  /*function preloadHiddenIframe() {
-                      const hiddenIframe = document.getElementById('hiddenIframe');
-                      hiddenIframe.src = 'pages/player.html';
-                      hiddenIframe.style.display = 'none';
-                  }*/
-              
-                  // Function to switch to the hidden iframe and hide the visible one
-                  function switchToHiddenIframe() {
-                      const visibleIframe = document.getElementById('visibleIframe');
-                      const hiddenIframe = document.getElementById('hiddenIframe');
-              
-                      // Hide the visible iframe
-                      visibleIframe.style.display = 'none';
-              
-                      // Show the hidden iframe
-                      hiddenIframe.style.display = 'block';
-                  }
-              
-                  // Preload the content in the hidden iframe
-                  //preloadHiddenIframe();
-              
-                  // Switch to the hidden iframe after 5 seconds
-                  setTimeout(switchToHiddenIframe, 7700);
-              </script>
+            <iframe id="visibleIframe" title="tab-0" src="pages/cover/index.html" class="embed-responsive-item"
+              style="display: block; "></iframe>
+            <iframe id="hiddenIframe" title="tab-1" src="pages/player.html" loading="lazy" class="embed-responsive-item"
+              style="display: none; "></iframe>
 
-              <!--<iframe title="tab-1" id="iframe-1041" src="pages/cover/index.html" loading="eager"
+            <script>
+              // Function to preload content in the hidden iframe
+              /*function preloadHiddenIframe() {
+                  const hiddenIframe = document.getElementById('hiddenIframe');
+                  hiddenIframe.src = 'pages/player.html';
+                  hiddenIframe.style.display = 'none';
+              }*/
+
+              // Function to switch to the hidden iframe and hide the visible one
+              function switchToHiddenIframe() {
+                const visibleIframe = document.getElementById('visibleIframe');
+                const hiddenIframe = document.getElementById('hiddenIframe');
+
+                // Hide the visible iframe
+                visibleIframe.style.display = 'none';
+
+                // Show the hidden iframe
+                hiddenIframe.style.display = 'block';
+              }
+
+              // Preload the content in the hidden iframe
+              //preloadHiddenIframe();
+
+              // Switch to the hidden iframe after 5 seconds
+              setTimeout(switchToHiddenIframe, 7700);
+            </script>
+
+            <!--<iframe title="tab-1" id="iframe-1041" src="pages/cover/index.html" loading="eager"
                 class="embed-responsive-item"></iframe>
               <script>
                 const iframe = document.getElementById('iframe-1041');
@@ -276,41 +286,41 @@
                   iframe.src = "pages/player.html";
                 };
               </script>-->
-            </div>
           </div>
-          <div id="tab-2" class="page-content tab">
-            <div id="div-1042" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
-              <iframe title="tab-2" id="iframe-1042" src="pages/youtube.html" loading="eager"
-                class="embed-responsive-item"></iframe>
-            </div>
+        </div>
+        <div id="tab-2" class="page-content tab">
+          <div id="div-1042" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+            <iframe title="tab-2" id="iframe-1042" src="pages/youtube.html" loading="eager"
+              class="embed-responsive-item"></iframe>
           </div>
-          <div id="tab-3" class="page-content tab">
-            <div id="div-1043" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
-              <iframe title="tab-3" id="iframe-1043" src="pages/youtuberadio.html" loading="lazy"
-                class="embed-responsive-item"></iframe>
-            </div>
+        </div>
+        <div id="tab-3" class="page-content tab">
+          <div id="div-1043" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+            <iframe title="tab-3" id="iframe-1043" src="pages/youtuberadio.html" loading="lazy"
+              class="embed-responsive-item"></iframe>
           </div>
-          <div id="tab-4" class="page-content tab">
-            <div id="div-1044" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
-              <iframe title="tab-4" id="iframe-1044" src="pages/coverflow.html" loading="eager"
-                class="embed-responsive-item"></iframe>
-            </div>
+        </div>
+        <div id="tab-4" class="page-content tab">
+          <div id="div-1044" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+            <iframe title="tab-4" id="iframe-1044" src="pages/coverflow.html" loading="eager"
+              class="embed-responsive-item"></iframe>
           </div>
-          <div id="tab-5" class="page-content tab">
-            <div id="div-1045" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
-              <iframe title="tab-5" id="iframe-1045" src="pages/wall.html" loading="eager" scrolling="yes"
-                class="embed-responsive-item"></iframe>
-            </div>
+        </div>
+        <div id="tab-5" class="page-content tab">
+          <div id="div-1045" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+            <iframe title="tab-5" id="iframe-1045" src="pages/wall.html" loading="eager" scrolling="yes"
+              class="embed-responsive-item"></iframe>
           </div>
-          <div id="tab-6" class="page-content tab back">
-            <div id="div-1046" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
-              <iframe title="tab-6" id="iframe-1046" src="pages/dash.html" loading="lazy"
-                class="embed-responsive-item"></iframe>
-            </div>
+        </div>
+        <div id="tab-6" class="page-content tab back">
+          <div id="div-1046" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+            <iframe title="tab-6" id="iframe-1046" src="pages/dash.html" loading="lazy"
+              class="embed-responsive-item"></iframe>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <script defer type="text/javascript" src="js/framework/framework7-bundle.min.js"></script>
@@ -326,11 +336,12 @@
   </script>
 
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-  data-cf-beacon='{"token": "9ad9f487b7ac47a19c1e8a7ae21d4212"}'></script>
+    data-cf-beacon='{"token": "9ad9f487b7ac47a19c1e8a7ae21d4212"}'></script>
 
   <script defer>
     thoriumCorePlugin.appLoaded();
   </script>
 
 </body>
+
 </html>
