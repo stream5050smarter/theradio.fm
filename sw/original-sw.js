@@ -1,3 +1,6 @@
+// pushengage build+1
+importScripts("https://clientcdn.pushengage.com/sdks/service-worker.js");
+
 /*!
  * Generic Service Worker for Thorium projects
  * Version 3.4 january, 2022
@@ -7,7 +10,7 @@
 const origin=self.location.origin;
 const skipAllExternalUrl=true;
 const blacklist=["https://firestore.googleapis.com","version.json",".php","%7B%7Binstimage%7D%7D"];
-const preloadList=['./','./offline.html', './index.html', './manifest.webmanifest']
+const preloadList=['./','./offline.html', './index.html', './manifest.json', './css/', './js/', './img/'];
 
 function isRejectable(url) {
   if ((skipAllExternalUrl == true) && (url.indexOf(origin) == -1)) {

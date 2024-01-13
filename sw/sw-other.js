@@ -1,8 +1,8 @@
 // pushengage build+1
 importScripts("https://clientcdn.pushengage.com/sdks/service-worker.js");
 
-const BASE_CACHE_NAME = 'pwa-cache-';
-let CURRENT_VERSION = "";
+const BASE_CACHE_NAME = 'theradiofm-v3';
+let CURRENT_VERSION = "14";
 
 // Fetch the version from version.json and set it to the CACHE_NAME
 fetch('/version.json')
@@ -15,31 +15,56 @@ fetch('/version.json')
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
+  '/manifest.json',
+  '/favicon.ico',
+  '/favicon.png',
+  '/img/',
+  '/img/46603.png',
   '/offline.html',  // For offline fallback
   '/css/',
   '/css/classes.css',
   '/css/framework7-bundle.min.css',
   '/css/framework7-keypad.min.css',
   '/css/thorium.min.css',
+  '/css/pages/index.css',
+  '/css/pages/cover.css',
+  '/css/plugins/',
+  '/css/plugins/thorium.core.min.css',
+  '/css/plugins/thorium.core.min.css.map',
+  '/fonts/',
+  '/fonts/icomoon/',
+  '/fonts/icomoon/icomoon.ttf',
+  '/fonts/icomoon/icomoon.woff',
+  '/fonts/icomoon/icomoon.woff2',
+  '/fonts/icomoon/icomoon.svg',
+  '/fonts/icomoon/icomoon.eot',
   '/js/',
+  '/js/classes.js',
+  '/js/framework7-keypad.min.js',
+  '/js/framework7-bundle.min.js',
+  '/js/thorium.min.js',
+  '/js/thorium.config.js.map',
   '/js/thorium.config.js',
   '/js/framework/',
   '/js/framework/framework7-bundle.min.js',
   '/js/framework/framework7-keypad.min.js.map',
   '/js/plugins/',
+  '/js/plugins/thorium.core.min.js.map',
   '/js/plugins/thorium.core.min.js',
   '/pages/',
+  '/pages/404.html',
   '/pages/cover/',
   '/pages/cover/index.html',
   '/pages/cover/assets/',
+  '/pages/cover/assets/icons.all',
   '/pages/cover/assets/icons.svg',
   '/pages/cover/assets/main.css',
   '/pages/cover/assets/main.js',
   '/pages/cover/assets/images/',
+  '/pages/cover/assets/images/favicon.png',
   '/pages/cover/assets/images/image01.jpg',
   '/pages/cover/assets/images/share.jpg',
-  '/img/46603.png',
-  '/version.json'
+  '/pages/cover/assets/images/apple-touch-icon.png'
 ];
 
 // Installing the service worker
