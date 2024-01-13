@@ -29,23 +29,6 @@
     }
   ],
   "scope": "/",
-  "splash_pages": null,
-  "screenshots": [],
-  "share_target": {
-    "action": "/share-target",
-    "method": "GET",
-    "params": {
-      "title": "Music Love Quest",
-      "text": "Welcome to the Music Love Quest, your ultimate destination for unlimited entertainment and socializing! Our free app offers a seamless and anonymous experience for users of all ages. With no login required, you can instantly enjoy our handpicked playlists, live radio, and interactive chat features. Plus, we&amp;#39;re excited to announce that theradio.fm now features a 100% free ChatGPT client called ZapGPT, developed by tinkerAI on the Zapier platform. Keep up with your favorite artists and radio hosts, or challenge your friends to our exciting games. And with our app directory, discovering new apps and features has never been easier! At theradio.fm, we prioritize your privacy and strive to offer a fun and engaging experience without the hassle of ads and interruptions. So why wait? Download the app now and explore all the incredible features that await you!",
-      "url": "https://theradio.fm",
-      "files": [
-        "image/*"
-      ],
-      "type": "application",
-      "target": "https://love.theradio.fm/share-target"
-    },
-    "enctype": "application/x-www-form-urlencoded"
-  },
   "shortcuts": [
     {
       "name": "Home",
