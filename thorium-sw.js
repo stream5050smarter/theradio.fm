@@ -1,3 +1,6 @@
+// pushengage build+1
+importScripts("https://clientcdn.pushengage.com/sdks/service-worker.js");
+
 /*!
  * Refactored Thorium Initialization for framework7 projects
  * Version 3.4 january, 2022 / 2024
