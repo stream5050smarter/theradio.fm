@@ -1,9 +1,13 @@
-const CACHE = "pwabuilder-offline-page";
-
+// pushengage build+1
 importScripts("https://clientcdn.pushengage.com/sdks/service-worker.js");
+
+// This is the "Offline page" service worker
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
+const CACHE = "pwabuilder-page";
+
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
 const offlineFallbackPage = "offline.html";
 
 self.addEventListener("message", (event) => {
@@ -22,13 +26,6 @@ self.addEventListener('install', async (event) => {
 if (workbox.navigationPreload.isSupported()) {
   workbox.navigationPreload.enable();
 }
-
-workbox.routing.registerRoute(
-  new RegExp('/*'),
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: CACHE
-  })
-);
 
 self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
