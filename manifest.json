@@ -112,7 +112,7 @@
     "social"
   ],
   "serviceworker": {
-    "src": "/thorium-sw.js",
+    "src": "/sw.js",
     "scope": "/"
   },
   "id": "theradio.fm",

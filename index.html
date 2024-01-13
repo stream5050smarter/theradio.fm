@@ -109,8 +109,8 @@
   <link rel="stylesheet" href="css/pages/index.css?r=20230701" />
   <link rel="stylesheet" href="css/classes.css" />
   <script async>
-    navigator.serviceWorker.register("thorium-sw.js");
-  </script>-->
+      navigator.serviceWorker.register("sw.js", { scope: "/" });
+  </script>
 </head>
 
 <body class="theme-dark color-theme-red">
@@ -327,15 +327,7 @@
 
   <script defer>
     if (typeof navigator.serviceWorker !== "undefined") {
-      //navigator.serviceWorker.register("sw.js");
-      //navigator.serviceWorker.register("thorium-pwabuilder.js", { scope: "https://theradio.fm/" });
-      //navigator.serviceWorker.register("thorium-pwabuilder.js", { scope: "/thorium-pwabuilder/" });
-      //navigator.serviceWorker.register("thorium-pwabuilder.js", { scope: "/" });
-      //navigator.serviceWorker.register("thorium-pwabuilder.js");
-      //navigator.serviceWorker.register("sw-pwabuilder.js");
-      navigator.serviceWorker.register("thorium-sw.js");
-      //navigator.serviceWorker.register("original-sw.js");
-      //navigator.serviceWorker.register("service-worker.js");
+      navigator.serviceWorker.register("sw.js", { scope: "/" });
     }
   </script>
 

@@ -3,4 +3,11 @@ Disallow: /db/
 Disallow: /font-awesome/
 Disallow: /fonts/
 Disallow: /js/
+Disallow: /css/
+Disallow: /sw/
 Disallow: /pages/
+Disallow: /ios/
+Disallow: /icons/
+Disallow: /forms/
+Disallow: /fragments/
+Disallow: /splashscreens/
