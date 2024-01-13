@@ -1,3 +1,7 @@
+// pushengage build+1
+importScripts("https://clientcdn.pushengage.com/sdks/service-worker.js");
+
+
 // This is the "Offline page" service worker
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');

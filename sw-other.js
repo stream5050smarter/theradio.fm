@@ -1,3 +1,6 @@
+// pushengage build+1
+importScripts("https://clientcdn.pushengage.com/sdks/service-worker.js");
+
 const BASE_CACHE_NAME = 'pwa-cache-';
 let CURRENT_VERSION = "";
 

@@ -1,3 +1,6 @@
+// pushengage build+1
+importScripts("https://clientcdn.pushengage.com/sdks/service-worker.js");
+
 /*!
  * Generic Service Worker for Thorium projects
  * Version 3.4 january, 2022
