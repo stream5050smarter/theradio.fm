@@ -14,22 +14,7 @@
     gtag("config", "G-PZWWSYRHSF");
   </script>
   <!-- END Google tag (gtag.js) -->
-  <script>
-    (function (w, d) {
-      w.PushEngage = w.PushEngage || [];
-      w._peq = w._peq || [];
-      PushEngage.push(['init', {
-        appId: '2a39fa95-0b43-4638-a65d-54c508deb1e3'
-      }]);
 
-      var e = d.createElement('script');
-
-      e.src = 'https://clientcdn.pushengage.com/sdks/pushengage-web-sdk.js';
-      e.async = true;
-      e.type = 'text/javascript';
-      d.head.appendChild(e);
-    })(window, document);
-  </script>
   <title>theradio.fm</title>
 
   <meta charset="utf-8" />
@@ -123,9 +108,9 @@
 
   <link rel="stylesheet" href="css/pages/index.css?r=20230701" />
   <link rel="stylesheet" href="css/classes.css" />
-  <script async>
+  <!--<script async>
     navigator.serviceWorker.register("sw-pwabuilder.js");
-  </script>
+  </script>-->
 </head>
 
 <body class="theme-dark color-theme-red">
@@ -257,7 +242,7 @@
               <iframe id="hiddenIframe" title="tab-1" src="pages/player.html" class="embed-responsive-item"
                 style="display: none;" loaging="lazy"></iframe>
 
-              <script>
+              <script defer>
 
                 // Function to preload content in the hidden iframe
                 /*function preloadHiddenIframe() {
@@ -336,11 +321,11 @@
 
   <script type="text/javascript" src="js/framework/framework7-bundle.min.js"></script>
 
-  <script type="text/javascript" src="js/thorium.config.js"></script>
+  <script defer type="text/javascript" src="js/thorium.config.js"></script>
 
-  <script type="text/javascript" src="js/plugins/thorium.core.min.js"></script>
+  <script defer type="text/javascript" src="js/plugins/thorium.core.min.js"></script>
 
-  <script>
+  <script defer>
     if (typeof navigator.serviceWorker !== "undefined") {
       //navigator.serviceWorker.register("sw.js");
       //navigator.serviceWorker.register("thorium-pwabuilder.js", { scope: "https://theradio.fm/" });
@@ -354,8 +339,25 @@
     }
   </script>
 
-  <script defer>
-    //thoriumCorePlugin.appLoaded();
+  <script>
+    thoriumCorePlugin.appLoaded();
+  </script>
+
+  <script>
+    (function (w, d) {
+      w.PushEngage = w.PushEngage || [];
+      w._peq = w._peq || [];
+      PushEngage.push(['init', {
+        appId: '2a39fa95-0b43-4638-a65d-54c508deb1e3'
+      }]);
+
+      var e = d.createElement('script');
+
+      e.src = 'https://clientcdn.pushengage.com/sdks/pushengage-web-sdk.js';
+      e.async = true;
+      e.type = 'text/javascript';
+      d.head.appendChild(e);
+    })(window, document);
   </script>
 
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
