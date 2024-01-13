@@ -71,15 +71,18 @@ const addToCache = async (request) => {
     const response = await fetch(request);
     console.log('com.thorium.serviceworker] file added to cache ' + request.url);
     await cache.put(request, response);
-  } catch(err) {
-    console.log('com.thorium.serviceworker] error ' + err.message);
-async function returnFromCache(request) {
-  const cache = await caches.open("thorium-cache");
-  const matching = await cache.match(request);
-  
-  if (!matching || matching.status === 404) {
-    return cache.match("offline.html");
+    } catch(err) {
+      console.log('com.thorium.serviceworker] error ' + err.message);
+    }
   }
-  
-  return matching;
-}
+
+  async function returnFromCache(request) {
+    const cache = await caches.open("thorium-cache");
+    const matching = await cache.match(request);
+    
+    if (!matching || matching.status === 404) {
+      return cache.match("offline.html");
+    }
+    
+    return matching;
+  }
