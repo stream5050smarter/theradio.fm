@@ -4,7 +4,7 @@
 importScripts("https://clientcdn.pushengage.com/sdks/service-worker.js");
 
 const BASE_CACHE_NAME = 'theradiofm-v3';
-let CURRENT_VERSION = "14";
+let CURRENT_VERSION = "27";
 
 // Fetch the version from version.json and set it to the CACHE_NAME
 fetch('/version.json')
