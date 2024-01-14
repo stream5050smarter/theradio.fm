@@ -11,10 +11,11 @@
     gtag('config', 'G-PZWWSYRHSF');
   </script>
   <!-- END Google tag (gtag.js) -->
+
+  <title>YouTube Red Random</title>
   <meta charset="utf-8">
-  <title>YouTube Red</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="YouTube Red">
+  <meta name="apple-mobile-web-app-title" content="YouTube Red Random">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="HandheldFriendly" content="true">
@@ -78,15 +79,19 @@
         var nextIndex = (currentIndex + 1) % strings.length;
         var nextPlaylist = strings[nextIndex];
         document.cookie = "playlistID=" + nextPlaylist + "; path=/";
-        var randomIndex = Math.floor(Math.random() * strings.length);
-        var randomPlaylist = strings[randomIndex];
+        var random1Index = Math.floor(Math.random() * strings.length);
+        var randomPlaylist = strings[random1Index];
+        var random2Index = Math.floor(Math.random() * strings.length);
+        var random2Playlist = strings[random2Index];
         document.cookie = "playlistID=" + randomPlaylist + "; path=/";
-        document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/?v=" + nextPlaylist + "&list=RD" + randomPlaylist + "&start_radio=1&rv=" + nextPlaylist;
-        console.log("Next playlist: " + nextPlaylist);
-        console.log("Random playlist: " + randomPlaylist);
+        document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/?v=" + nextPlaylist + "&list=RD" + random1Playlist + "&start_radio=1&rv=" + random2Playlist;
         console.log("Current index: " + currentIndex);
         console.log("Next index: " + nextIndex);
-        console.log("Random index: " + randomIndex);
+        console.log("Next playlist: " + nextPlaylist);
+        console.log("Random index 1: " + random1Index);
+        console.log("Random playlist 1: " + random1Playlist);
+        console.log("Random index 2: " + random2Index);
+        console.log("Random playlist 2: " + random2Playlist);
       } else {
         generateRandomPlaylist();
       }
