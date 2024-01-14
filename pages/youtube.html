@@ -63,12 +63,12 @@
     
     var strings = [
 
-      "PLuWIxgNYqm0ketpCdUpLK4zjreYpDlLoE",
-      "PLuWIxgNYqm0lwRXD3Sqe2_ZryiljuW-L9",
-      "PLuWIxgNYqm0lnbXjnFF3bdEBbRHkr-R3k",
-      "PLuWIxgNYqm0mQd_Z6eYbNa8Riyjl0znGC",
-      "PLuWIxgNYqm0lXxPLZ9hBT9M46m53H5GES",
-      "PLuWIxgNYqm0kV69z-SJHDwAuebGmIhbp6",
+      "videoseries?list=PLuWIxgNYqm0ketpCdUpLK4zjreYpDlLoE",
+      "videoseries?list=PLuWIxgNYqm0lwRXD3Sqe2_ZryiljuW-L9",
+      "videoseries?list=PLuWIxgNYqm0lnbXjnFF3bdEBbRHkr-R3k",
+      "videoseries?list=PLuWIxgNYqm0mQd_Z6eYbNa8Riyjl0znGC",
+      "videoseries?list=PLuWIxgNYqm0lXxPLZ9hBT9M46m53H5GES",
+      "videoseries?list=PLuWIxgNYqm0kV69z-SJHDwAuebGmIhbp6",
 
       /*"Tx1sqYc3qas&list=RDTx1sqYc3qas&start_radio=1",
       "Ah0Ys50CqO8&list=RDQMF2R40qRK-qk&start_radio=1",
@@ -120,7 +120,7 @@
         // document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/" + nextPlaylist;
         // https://www.youtube-nocookie.com/embed/?v=Tx1sqYc3qas&list=RDTx1sqYc3qas
         // https://www.youtube.com/watch?v=mj4cD5xn2n0&list=RD1e_j20yFAvo&start_radio=1  
-        document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/?v=" + nextPlaylist;
+        document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/" + nextPlaylist;
       } else {
         // If the cookie doesn't exist or its value is not in the array, generate a random playlist as before
         generateRandomPlaylist();
@@ -139,7 +139,7 @@
 
       // Set the src attribute of the iframe to the random playlist
       // document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + randomPlaylist;
-      document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/?v=" + randomPlaylist;
+      document.getElementById("playlistiframe").src = "https://www.youtube-nocookie.com/embed/" + randomPlaylist;
     }
 
     // Call setNextPlaylistID() when the page loads
