@@ -322,29 +322,29 @@
 
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon="{'token': '9ad9f487b7ac47a19c1e8a7ae21d4212'}"></script>
-
-  <script defer>
+  
+  <script>
     if (typeof navigator.serviceWorker !== "undefined") {
       navigator.serviceWorker.register("sw.js");
     }
   </script>
 
-  <script defer>
-    (function (w, d) {
+  <script>
+    (function(w, d) {
       w.PushEngage = w.PushEngage || [];
       w._peq = w._peq || [];
       PushEngage.push(['init', {
-        appId: '2a39fa95-0b43-4638-a65d-54c508deb1e3'
+          appId: '2a39fa95-0b43-4638-a65d-54c508deb1e3'
       }]);
-
+    
       var e = d.createElement('script');
-
+    
       e.src = 'https://clientcdn.pushengage.com/sdks/pushengage-web-sdk.js';
       e.async = true;
       e.type = 'text/javascript';
       d.head.appendChild(e);
     })(window, document);
-  </script>
+</script>
 
 </body>
 
