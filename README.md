@@ -30,4 +30,4 @@ Images:       Pintrest, Canva, Adobe Express
 Audio/Video:  Shazam, YouTube, Selected South African and Namibian Radio Stations
 
 ### Takedowns
-Any takedowns requests will always be considered, and should be addresed to: pleasetakedownfromtheradiofmorelse@havit.me and please also make direct contact on [+27847801119](tel:+27847801119)
+Any takedowns requests will always be considered, and should be addresed to: pleasetakedownfromtheradiofmorelse@havit.me and please also make direct contact on [+27837859500](tel:+27837859500)
